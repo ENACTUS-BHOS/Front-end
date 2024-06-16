@@ -9,7 +9,7 @@ main {
 }
 
 .top-row {
-    margin-top: 46px;
+    margin-top: 40px;
     margin-left: 80px;
     height: 3.5rem;
     display: flex;
@@ -22,11 +22,11 @@ main {
     white-space: nowrap;
     margin-left: 1.5rem;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .logo {
-    font-family: Garamond;
+    font-family: 'EB Garamond';
     font-size: 48px;
     font-weight: 700;
     line-height: 62.64px;
