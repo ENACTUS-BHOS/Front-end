@@ -1,0 +1,47 @@
+.professionals-container,
+img {
+    width: 100%;
+}
+
+img {
+    filter: brightness(80%);
+}
+
+.professionals-container {
+    margin-top: 50px;
+    position: relative;
+    left: 0;
+}
+
+.title {
+    position: absolute;
+    bottom: 85px;
+    right: 85px;
+    color: white;
+    font-size: 62px;
+    font-weight: 600;
+    line-height: 68.2px;
+    font-family: 'EB Garamond';
+}
+
+.subtitle {
+    position: absolute;
+    bottom: 150px;
+    right: 85px;
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33.6px;
+    font-family: sans-serif;
+}
+
+.see-more {
+    position: absolute;
+    bottom: 80px;
+    left: 85px;
+    color: white;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 27.34px;
+    font-family: sans-serif;
+}
