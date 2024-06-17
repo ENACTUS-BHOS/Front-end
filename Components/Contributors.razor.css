@@ -1,9 +1,5 @@
-.wallpaper {
-    width: 100%;
-    height: 800px;
-}
-
 .contributors {
+    margin-top: 7rem;
     margin-left: 80px;
     display: flex;
     flex-direction: row;
@@ -39,5 +35,5 @@ button {
 
 img {
     margin-top: 70px;
-    margin-left: 10px;
+    margin-left: 5rem;
 }

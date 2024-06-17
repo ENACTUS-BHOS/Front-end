@@ -9,8 +9,8 @@ main {
 }
 
 .top-row {
-    margin-top: 40px;
-    margin-left: 80px;
+    width: 100%;
+    margin: 40px 0 40px;
     height: 3.5rem;
     display: flex;
     align-items: center;
@@ -30,7 +30,7 @@ main {
     font-size: 48px;
     font-weight: 700;
     line-height: 62.64px;
-    margin-left: 0 !important;
+    margin-left: 40px !important;
 }
 
 .navigation-link {
@@ -92,7 +92,6 @@ main {
     }
 
     article {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+        padding: 0 !important;
     }
 }
