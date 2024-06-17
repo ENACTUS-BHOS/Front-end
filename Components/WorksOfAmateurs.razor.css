@@ -1,4 +1,4 @@
-.professionals-container,
+.amateurs-container,
 img {
     width: 100%;
 }
@@ -7,7 +7,7 @@ img {
     filter: brightness(80%);
 }
 
-.professionals-container {
+.amateurs-container {
     margin-top: 50px;
     position: relative;
     left: 0;
