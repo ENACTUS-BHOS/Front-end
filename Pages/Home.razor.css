@@ -1,0 +1,10 @@
+.heading {
+    color: black;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 66px;
+    font-family: 'EB Garamond';
+    width: 72%;
+    margin: 7rem auto;
+    text-align: center;
+}
