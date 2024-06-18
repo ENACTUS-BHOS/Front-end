@@ -1,0 +1,40 @@
+.tutorials-exhibitions {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 7rem 80px;
+    justify-content: space-between;
+}
+
+.tutorials,
+.exhibitions {
+    position: relative;
+    width: 49%;
+}
+
+img {
+    width: 100%;
+    filter: brightness(65%);
+}
+
+.title {
+    position: absolute;
+    bottom: 85px;
+    left: 50px;
+    color: white;
+    font-size: 62px;
+    font-weight: 600;
+    line-height: 68.2px;
+    font-family: 'EB Garamond';
+}
+
+.subtitle {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33.6px;
+    font-family: sans-serif;
+}

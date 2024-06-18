@@ -9,8 +9,8 @@ main {
 }
 
 .top-row {
-    margin-top: 46px;
-    margin-left: 80px;
+    width: 100%;
+    margin: 40px 0 40px;
     height: 3.5rem;
     display: flex;
     align-items: center;
@@ -22,15 +22,15 @@ main {
     white-space: nowrap;
     margin-left: 1.5rem;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .logo {
-    font-family: Garamond;
+    font-family: 'EB Garamond';
     font-size: 48px;
     font-weight: 700;
     line-height: 62.64px;
-    margin-left: 0 !important;
+    margin-left: 40px !important;
 }
 
 .navigation-link {
@@ -42,6 +42,8 @@ main {
 
 .navigation-container {
     margin-right: 80px;
+    display: flex;
+    justify-self: flex-end;
 }
 
 .top-row ::deep a:first-child {
@@ -73,7 +75,7 @@ main {
     }
 
     .top-row {
-        position: sticky;
+        position: absolute;
         top: 0;
         z-index: 1;
     }
@@ -84,9 +86,12 @@ main {
         width: 0;
     }
 
-    .top-row,
-    article {
+    .top-row {
         padding-left: 2rem !important;
         padding-right: 1.5rem !important;
+    }
+
+    article {
+        padding: 0 !important;
     }
 }

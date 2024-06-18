@@ -1,0 +1,18 @@
+<div class="product-card">
+    <img src=@ImageUrl alt="product image"/>
+
+    <div class="title">@Title</div>
+    
+    <div class="author">by @Author</div>
+</div>
+
+@code {
+    [Parameter]
+    public string? ImageUrl { get; set; }
+
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public string? Author { get; set; }
+}
