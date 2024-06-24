@@ -8,40 +8,40 @@ img {
 }
 
 .professionals-container {
-    margin-top: 50px;
+    margin-top: 3.125rem;
     position: relative;
     left: 0;
 }
 
 .title {
     position: absolute;
-    bottom: 85px;
-    left: 85px;
+    bottom: 5.3125rem;
+    left: 5.3125rem;
     color: white;
-    font-size: 62px;
+    font-size: 3.875rem;
     font-weight: 600;
-    line-height: 68.2px;
+    line-height: 4.2625rem;
     font-family: 'EB Garamond';
 }
 
 .subtitle {
     position: absolute;
-    bottom: 150px;
-    left: 85px;
+    bottom: 13.125rem;
+    left: 5.3125rem;
     color: white;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 400;
-    line-height: 33.6px;
+    line-height: 2.1rem;
     font-family: sans-serif;
 }
 
 .see-more {
     position: absolute;
-    bottom: 80px;
-    right: 85px;
+    bottom: 5rem;
+    right: 5.3125rem;
     color: white;
-    font-size: 21px;
+    font-size: 1.3125rem;
     font-weight: 400;
-    line-height: 27.34px;
+    line-height: 1.70875rem;
     font-family: sans-serif;
 }

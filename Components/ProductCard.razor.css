@@ -1,27 +1,27 @@
 .product-card {
     width: 415px;
-    height: 550px;
+    height: 53.125rem;
     position: relative;
 }
 
 .title {
     position: absolute;
-    bottom: 60px;
-    left: 32px;
+    bottom: 3.75rem;
+    left: 2rem;
     color: white;
-    font-size: 42px;
+    font-size: 2.625rem;
     font-weight: 600;
-    line-height: 66px;
+    line-height: 4.125rem;
     font-family: 'EB Garamond';
 }
 
 .author {
     position: absolute;
-    bottom: 32px;
-    left: 32px;
+    bottom: 2rem;
+    left: 2rem;
     color: white;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 400;
-    line-height: 31.25px;
+    line-height: 1.95rem;
     font-family: sans-serif;
 }

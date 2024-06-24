@@ -1,39 +1,39 @@
 .contributors {
     margin-top: 7rem;
-    margin-left: 80px;
+    margin-left: 5rem;
     display: flex;
     flex-direction: row;
 }
 
 p {
-    margin-top: 20px;
+    margin-top: 1.25rem;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-family: sans-serif;
-    line-height: 25.2px;
+    line-height: 1.575rem;
     letter-spacing: 6%;
-    width: 522px;
+    width: 32.625rem;
 }
 
 h2 {
-    font-size: 62px;
+    font-size: 3.875rem;
     font-family: 'EB Garamond';
     font-weight: 600;
-    line-height: 68.2px;
+    line-height: 4.2625rem;
 }
 
 button {
-    border-radius: 40px;
+    border-radius: 2.5rem;
     color: white;
     background-color: rgba(63, 0, 5, 1);
     border: none;
-    padding: 20px, 30px, 20px, 36px;
-    width: 197px;
-    height: 60px;
-    margin-top: 50px;
+    padding: 1.25rem, 1.875rem, 1.25rem, 2.25rem;
+    width: 12.5rem;
+    height: 3.75rem;
+    margin-top: 3.125rem;
 }
 
 img {
-    margin-top: 70px;
+    margin-top: 4.375rem;
     margin-left: 5rem;
 }
