@@ -1,26 +1,16 @@
-.tutorials-exhibitions {
-    display: flex;
-    flex-direction: row;
+.logo {
     width: 100%;
-    padding: 7rem 5rem;
-    justify-content: space-between;
-}
-
-.tutorials,
-.exhibitions {
     position: relative;
-    width: 49%;
 }
 
 img {
     width: 100%;
-    filter: brightness(65%);
 }
 
 .title {
     position: absolute;
-    bottom: 5.3125rem;
-    left: 3.125rem;
+    bottom: 5.625rem;
+    left: 5rem;
     color: white;
     font-size: 3.875rem;
     font-weight: 600;
@@ -30,9 +20,9 @@ img {
 
 .subtitle {
     position: absolute;
-    bottom: 3.125rem;
-    left: 3.125rem;
-    color: white;
+    bottom: 2.5rem;
+    left: 5rem;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 2.1rem;

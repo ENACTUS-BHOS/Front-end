@@ -16,32 +16,23 @@ img {
 .title {
     position: absolute;
     bottom: 5.3125rem;
-    right: 5.3125rem;
+    left: 5.3125rem;
     color: white;
     font-size: 3.875rem;
     font-weight: 600;
     line-height: 4.2625rem;
     font-family: 'EB Garamond';
-}
-
-.subtitle {
-    position: absolute;
-    bottom: 13.125rem;
-    right: 5.3125rem;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 2.1rem;
-    font-family: sans-serif;
+    width: 40%;
 }
 
 .see-more {
     position: absolute;
     bottom: 5rem;
-    left: 5.3125rem;
+    right: 5.3125rem;
     color: white;
     font-size: 1.3125rem;
     font-weight: 400;
     line-height: 1.70875rem;
     font-family: sans-serif;
+    text-decoration: none;
 }
