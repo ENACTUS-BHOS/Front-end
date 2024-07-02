@@ -1,22 +1,46 @@
 ﻿@inherits LayoutComponentBase
+
+@inject NavigationManager navigationManager
+
 <div class="page">
     <main>
         <div class="top-row px-4">
-            <a class="logo" href="/" target="_blank">
-                <img src="/Images/logo.png"/>
-            </a>
+            @if (this.navigationManager.BaseUri == this.navigationManager.Uri)
+            {
+                <a class="logo" href="/">
+                    <img src="/Images/logo.png" />
+                </a>
 
-            <div class="navigation-container">
-                <a class="navigation-link" href="/" target="_blank">Ana səhifə</a>
+                <div class="navigation-container">
+                <a class="navigation-link" href="/">Ana səhifə</a>
 
-                <a class="navigation-link" href="/Artists" target="_blank">Əl işləri</a>
+                <a class="navigation-link" href="/Artists">Əl işləri</a>
 
-                <a class="navigation-link" href="/TutorialsAndExhibitions" target="_blank">Təlimlər</a>
+                <a class="navigation-link" href="/TutorialsAndExhibitions">Təlimlər</a>
 
-                <a class="navigation-link" href="/AboutUs" target="_blank">Sərgilər</a>
+                <a class="navigation-link" href="/AboutUs">Sərgilər</a>
 
-                <a class="navigation-link" href="/AboutUs" target="_blank">Haqqımızda</a>
+                <a class="navigation-link" href="/AboutUs">Haqqımızda</a>
             </div>
+            }
+            else
+            {
+                <a class="logo" href="/">
+                    <img src="/Images/dark-logo.png" />
+                </a>
+
+                <div class="navigation-container">
+                <a style="color: #60480b" class="navigation-link" href="/">Ana səhifə</a>
+
+                <a style="color: #60480b" class="navigation-link" href="/Artists">Əl işləri</a>
+
+                <a style="color: #60480b" class="navigation-link" href="/TutorialsAndExhibitions">Təlimlər</a>
+
+                <a style="color: #60480b" class="navigation-link" href="/AboutUs">Sərgilər</a>
+
+                <a style="color: #60480b" class="navigation-link" href="/AboutUs">Haqqımızda</a>
+            </div>
+            }
         </div>
 
         <article class="content px-4">

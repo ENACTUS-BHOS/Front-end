@@ -2,17 +2,82 @@
     <h2>Sənətkarlarımızı tanıyaq</h2>
 
     <div class="artists-cards">
-        <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
-            Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in love for nature and humanity." />
+        <div class="image-galery slider" style="--count:@Count;
+        --half-count:@HalfCount">
+            <div class="slide-track">
+                <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
+                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+        love for nature and humanity." />
 
-        <div class="image-galery">
-            <img src="/Images/Artists/image-6.png" />
+                <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
+                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+        love for nature and humanity." />
 
-            <img src="/Images/Artists/image-7.png" />
+        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
+                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+        love for nature and humanity." />
 
-            <img src="/Images/Artists/image-8.png" />
+        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
+                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+        love for nature and humanity." />
 
-            <img src="/Images/Artists/image-6.png" />
+        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
+                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+        love for nature and humanity." />
+
+        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
+                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+        love for nature and humanity." />
+
+        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
+                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+        love for nature and humanity." />
+
+        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
+                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+        love for nature and humanity." />
+
+        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
+                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+        love for nature and humanity." />
+
+        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
+                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+        love for nature and humanity." />
+            </div>
         </div>
     </div>
 </div>
+
+<style>
+    @@keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-620px * var(--half-count)))
+        }
+    }
+
+    .slider {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    .slide-track {
+        animation: scroll 25s linear infinite;
+        display: flex;
+        width: calc(620px * var(--count));
+    }
+
+    .slide-track:hover {
+        animation-play-state: paused;
+    }
+</style>
+
+@code {
+    public string? Count { get; set; } = "12";
+    public string? HalfCount { get; set; } = "6";
+}

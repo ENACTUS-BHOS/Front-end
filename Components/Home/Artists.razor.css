@@ -12,13 +12,12 @@
 .image-galery {
     gap: 1.5rem;
     overflow: hidden;
-    width: 57%;
     padding-left: 1.5rem;
     padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
 }
 
-.image-galery > img {
+.image-galery>img {
     filter: grayscale(1);
 }
 
