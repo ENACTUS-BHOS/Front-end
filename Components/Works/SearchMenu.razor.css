@@ -1,0 +1,70 @@
+.search-menu .container {
+  font-family: DM Sans;
+  width: 1280px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.search-menu button {
+  background-color: #e4d4c8;
+  color: var(--black-modified);
+  vertical-align: middle;
+  align-items: center;
+  border: none;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --primary-color: #60480a;
+  --secondary-color: #e4d4c8;
+  --black-modified: #201a1e;
+}
+
+a {
+  text-decoration: none;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+.action-buttons button {
+  font-family: DM Sans;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 27.34px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 155px;
+  margin-right: 10px;
+}
+
+#search-input {
+  width: 413px;
+  padding: 20px 203px 21px 30px;
+  border-radius: 30px;
+  background: #e2e6e780;
+  border: none;
+}
+.btn-search {
+  font-family: DM Sans;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 27.34px;
+  text-align: center;
+  width: 197px;
+  height: 60px;
+  padding: 10px 17px 10px 20px;
+  gap: 10px;
+  border-radius: 30px;
+  opacity: 0px;
+}
+input::placeholder {
+  width: 180px;
+  height: 19px;
+  gap: 0px;
+  opacity: 0.5;
+}
