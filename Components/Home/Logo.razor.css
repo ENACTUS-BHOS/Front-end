@@ -1,0 +1,30 @@
+.logo {
+    width: 100%;
+    position: relative;
+}
+
+img {
+    width: 100%;
+}
+
+.title {
+    position: absolute;
+    bottom: 5.625rem;
+    left: 5rem;
+    color: white;
+    font-size: 3.875rem;
+    font-weight: 600;
+    line-height: 4.2625rem;
+    font-family: 'EB Garamond';
+}
+
+.subtitle {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.1rem;
+    font-family: 'DM Sans';
+}

@@ -1,0 +1,38 @@
+.amateurs-container,
+img {
+    width: 100%;
+}
+
+img {
+    filter: brightness(80%);
+}
+
+.amateurs-container {
+    margin-top: 3.125rem;
+    position: relative;
+    left: 0;
+}
+
+.title {
+    position: absolute;
+    bottom: 5.3125rem;
+    left: 5.3125rem;
+    color: white;
+    font-size: 3.875rem;
+    font-weight: 600;
+    line-height: 4.2625rem;
+    font-family: 'EB Garamond';
+    width: 40%;
+}
+
+.see-more {
+    position: absolute;
+    bottom: 5rem;
+    right: 5.3125rem;
+    color: white;
+    font-size: 1.3125rem;
+    font-weight: 400;
+    line-height: 1.70875rem;
+    font-family: 'DM Sans';
+    text-decoration: none;
+}

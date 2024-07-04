@@ -6,11 +6,12 @@
 
 main {
     flex: 1;
+    width: 100%;
 }
 
 .top-row {
     width: 100%;
-    margin: 40px 0 40px;
+    margin: 2.5rem 0;
     height: 3.5rem;
     display: flex;
     align-items: center;
@@ -20,28 +21,28 @@ main {
 .top-row ::deep a,
 .top-row ::deep .btn-link {
     white-space: nowrap;
-    margin-left: 1.5rem;
+    margin-left: 2rem;
     text-decoration: none;
     color: white;
 }
 
 .logo {
     font-family: 'EB Garamond';
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: 700;
-    line-height: 62.64px;
-    margin-left: 40px !important;
+    line-height: 3.915rem;
+    margin-left: 2.5rem !important;
 }
 
 .navigation-link {
-    font-family: sans-serif;
-    font-size: 18px;
+    font-family: 'DM Sans';
+    font-size: 1.125rem;
     font-weight: 400;
-    line-height: 23.44px;
+    line-height: 1.465rem;
 }
 
 .navigation-container {
-    margin-right: 80px;
+    margin-right: 5rem;
     display: flex;
     justify-self: flex-end;
 }
@@ -68,7 +69,7 @@ main {
     }
 
     .sidebar {
-        width: 250px;
+        width: 23.125rem;
         height: 100vh;
         position: sticky;
         top: 0;

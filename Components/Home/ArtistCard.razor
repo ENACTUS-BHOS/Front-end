@@ -1,0 +1,27 @@
+<div class="card item">
+    <div class="info">
+        <h3>Haqqında</h3>
+
+        <div class="name">@Name</div>
+
+        <div class="major">@Major</div>
+
+        <p>@Information</p>
+    </div>
+
+    <img src="@ImageUrl" alt="Artist's photo"/>
+</div>
+
+@code {
+    [Parameter]
+    public string? Name { get; set; }
+
+    [Parameter]
+    public string? Major { get; set; }
+
+    [Parameter]
+    public string? Information { get; set; }
+
+    [Parameter]
+    public string? ImageUrl { get; set; }
+}

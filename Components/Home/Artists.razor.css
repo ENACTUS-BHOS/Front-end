@@ -1,0 +1,32 @@
+.artists {
+    padding-left: 5rem;
+}
+
+.artists-cards,
+.image-galery {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+}
+
+.image-galery {
+    gap: 1.5rem;
+    overflow: hidden;
+    padding-left: 1.5rem;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+}
+
+.image-galery>img {
+    filter: grayscale(1);
+}
+
+h2 {
+    color: black;
+    font-size: 3.875rem;
+    font-weight: 600;
+    line-height: 4.2625rem;
+    font-family: 'EB Garamond';
+    margin: 7rem auto 3.5rem;
+    text-align: left;
+}

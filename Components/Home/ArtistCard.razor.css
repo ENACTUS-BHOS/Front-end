@@ -1,0 +1,70 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    border: none;
+    border-radius: 20px !important;
+    width: 620px !important;
+    flex-shrink: 0;
+}
+
+.item {
+    flex: 1 0;
+    padding: 1rem;
+}
+
+.info {
+    background-color: #f2e9e3;
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+    padding-top: 3.75rem;
+    padding-left: 2.5rem;
+}
+
+img {
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    filter: grayscale(1);
+    transition: all 0.5s ease;
+}
+
+.card:hover>img {
+    filter: grayscale(0);
+}
+
+h3 {
+    color: black;
+    font-size: 2.625rem;
+    font-weight: 600;
+    line-height: 2.625rem;
+    font-family: 'EB Garamond';
+    margin: 0 auto 2rem;
+    text-align: left;
+}
+
+.name {
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 1.625rem;
+    line-height: 2.115rem;
+    margin-bottom: 0.4rem;
+    letter-spacing: 5%;
+}
+
+.major {
+    color: #746e6d;
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.953rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 5%;
+}
+
+p {
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.575rem;
+    padding-right: 2.5rem;
+    letter-spacing: 6%;
+}
