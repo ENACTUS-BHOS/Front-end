@@ -1,3 +1,5 @@
+@inject IHttpClientFactory httpClientFactory
+
 <div class="artists">
     <h2>Sənətkarlarımızı tanıyaq</h2>
 
@@ -5,44 +7,44 @@
         <div class="image-galery slider" style="--count:@Count;
         --half-count:@HalfCount">
             <div class="slide-track">
-                <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
+                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
         love for nature and humanity." />
 
-                <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
+                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
         love for nature and humanity." />
 
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
+                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
         love for nature and humanity." />
 
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
+                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
         love for nature and humanity." />
 
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
+                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
         love for nature and humanity." />
 
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
+                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
         love for nature and humanity." />
 
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
+                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
         love for nature and humanity." />
 
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
+                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
         love for nature and humanity." />
 
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
+                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
         love for nature and humanity." />
 
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
+                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
+                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
         love for nature and humanity." />
             </div>
         </div>
@@ -80,4 +82,22 @@
 @code {
     public string? Count { get; set; } = "12";
     public string? HalfCount { get; set; } = "6";
+
+    public IEnumerable<Artist> AllArtists { get; set; } = new List<Artist>() { };
+
+    protected override async Task OnInitializedAsync()
+    {
+        var httpClient = httpClientFactory.CreateClient("Miras");
+
+        var response = await httpClient.GetAsync($"api/Artists/GetAll");
+
+        var content = await response.Content.ReadAsStringAsync();
+
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new ApplicationException(content);
+        }
+
+        AllArtists = JsonConvert.DeserializeObject<List<Artist>>(content);
+    }
 }
