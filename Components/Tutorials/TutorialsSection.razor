@@ -1,0 +1,100 @@
+@inject IHttpClientFactory httpClientFactory
+
+<div class="section">
+    @for (var i = 0; i < 3; i++)
+    {
+        <div class="tutorials">
+
+            @for (var j = 0; j < 2; j++)
+            {
+                @if(index < AllTutorials.Count())
+                {
+                    <iframe width=670 height=380 scrolling="no" src="@AllTutorials.ElementAt(index).VideoUrl"
+                    title="@AllTutorials.ElementAt(index).Title" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+
+                    index++;
+                }
+            }
+        </div>
+    }
+
+    <div class="pagination">
+        <button @onclick="OnPreviousClicked">&laquo;</button>
+        <button>@(page + 1)</button>
+        <button @onclick="OnNextClicked">&raquo;</button>
+    </div>
+</div>
+
+@code {
+    public IEnumerable<Tutorial> AllTutorials { get; set; } = new List<Tutorial>() { };
+
+    public int page = 0;
+
+    public int take = 6;
+
+    public int skip = 0;
+
+    public int index = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var httpClient = httpClientFactory.CreateClient("Miras");
+
+        var response = await httpClient.GetAsync($"api/Tutorial/Get/{skip}/{take}");
+
+        var content = await response.Content.ReadAsStringAsync();
+
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new ApplicationException(content);
+        }
+
+        AllTutorials = JsonConvert.DeserializeObject<List<Tutorial>>(content);
+    }
+
+    public async Task OnNextClicked()
+    {
+        index = 0;
+
+        ++page;
+
+        skip = page * take;
+
+        var httpClient = httpClientFactory.CreateClient("Miras");
+
+        var response = await httpClient.GetAsync($"api/Tutorial/Get/{skip}/{take}");
+
+        var content = await response.Content.ReadAsStringAsync();
+
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new ApplicationException(content);
+        }
+
+        AllTutorials = JsonConvert.DeserializeObject<List<Tutorial>>(content);
+    }
+
+    public async Task OnPreviousClicked()
+    {
+        index = 0;
+
+        --page;
+
+        skip = page * take;
+
+        var httpClient = httpClientFactory.CreateClient("Miras");
+
+        var response = await httpClient.GetAsync($"api/Tutorial/Get/{skip}/{take}");
+
+        var content = await response.Content.ReadAsStringAsync();
+
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new ApplicationException(content);
+        }
+
+        AllTutorials = JsonConvert.DeserializeObject<List<Tutorial>>(content);
+    }
+}

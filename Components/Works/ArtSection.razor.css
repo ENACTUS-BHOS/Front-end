@@ -21,13 +21,12 @@ a {
   color: #ffffff;
 }
 .text-overlay .content-container {
-  width: 1280px;
   padding-top: 40px;
-  margin: auto;
-  font-family: DM Sans;
+  margin: 0 5rem;
+  font-family: 'DM Sans';
 }
 .main-heading {
-  font-family: EB Garamond;
+  font-family: 'EB Garamond';
   font-size: 62px;
   font-weight: 600;
   line-height: 68.2px;
@@ -35,7 +34,7 @@ a {
   text-align: left;
 }
 .main-heading .subtitle {
-  font-family: DM Sans;
+  font-family: 'DM Sans';
   font-size: 18px;
   font-weight: 400;
   line-height: 25.2px;
@@ -52,8 +51,7 @@ a {
   height: 100;
 }
 .content-container {
-  width: 1280px;
-  margin: auto;
+  margin: 0 5rem;
   margin-top: 60px;
 }
 .artist-overview {
@@ -74,14 +72,14 @@ a {
 }
 
 .artist-name {
-  font-family: EB Garamond;
+  font-family: 'EB Garamond';
   font-size: 42px;
   font-weight: 600;
   line-height: 42px;
   text-align: left;
 }
 .artist-role {
-  font-family: DM Sans;
+  font-family: 'DM Sans';
   font-size: 24px;
   font-weight: 400;
   line-height: 31.25px;
@@ -97,7 +95,7 @@ a {
   text-align: justified;
 }
 .view-art-link {
-  font-family: DM Sans;
+  font-family: 'DM Sans';
   font-size: 21px;
   font-weight: 400;
   line-height: 27.34px;
@@ -116,12 +114,11 @@ a {
   border: none;
 }
 .card {
-  width: 430px;
   border: none;
 }
 .art-cards img {
   display: block;
-  width: 432px;
+  width: 100%;
   border: none;
 }
 .card-description {
@@ -129,7 +126,7 @@ a {
   width: 393px;
 }
 .card-name {
-  font-family: EB Garamond;
+  font-family: 'EB Garamond';
   font-size: 36px;
   font-weight: 600;
   line-height: 36px;
@@ -140,7 +137,7 @@ a {
   justify-content: space-between;
 }
 .card-price p {
-  font-family: DM Sans;
+  font-family: 'DM Sans';
   font-size: 36px;
   font-weight: 700;
   line-height: 46.87px;
@@ -157,4 +154,8 @@ a {
   background-color: #e4d4c8;
   text-align: center;
   color: var(--black-modified);
+}
+
+.content-container {
+  margin-bottom: 5rem;
 }
