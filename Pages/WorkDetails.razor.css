@@ -1,0 +1,343 @@
+:root {
+    --primary-color: #60480a;
+    --secondary-color: #e4d4c8;
+    --black-modified: #201a1e;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.search-menu .container {
+    font-family: 'DM Sans';
+    padding: 0 5rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+}
+
+.search-menu button {
+    background-color: #e4d4c8;
+    color: var(--black-modified);
+    vertical-align: middle;
+    align-items: center;
+    border: none;
+}
+
+.search-bar {
+    margin: 0 0 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #60480a;
+    --secondary-color: #e4d4c8;
+    --black-modified: #201a1e;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.action-buttons button {
+    font-family: 'DM Sans';
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 27.34px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 155px;
+    margin-right: 10px;
+}
+
+#search-input {
+    width: 413px;
+    padding: 20px 203px 21px 30px;
+    border-radius: 30px;
+    background: #e2e6e780;
+    border: none;
+}
+
+.btn-search {
+    font-family: 'DM Sans';
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 27.34px;
+    text-align: center;
+    width: 197px;
+    height: 60px;
+    padding: 10px 17px 10px 20px;
+    gap: 10px;
+    border-radius: 30px;
+    opacity: 0px;
+}
+
+input::placeholder {
+    width: 100%;
+    height: 19px;
+    gap: 0px;
+    opacity: 0.5;
+}
+
+input {
+    padding: 20px 30px !important;
+}
+
+.filters {
+    margin-left: 5rem;
+    margin-top: 4rem;
+}
+
+#hidden {
+    display: none;
+}
+
+.sort-button {
+    background-color: #e4d4c8;
+    color: var(--black-modified);
+    vertical-align: middle;
+    align-items: center;
+    border: none;
+    font-family: 'DM Sans';
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 27.34px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 155px;
+    margin-right: 10px;
+}
+
+.text-overlay {
+    background-image: url("/Images/Works/background-image.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    height: 300px;
+    margin-top: 8.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text-overlay a {
+    color: #ffffff;
+}
+
+.text-overlay .content-container {
+    padding-top: 40px;
+    margin: 0 5rem;
+    font-family: 'DM Sans';
+}
+
+.main-heading {
+    font-family: 'EB Garamond';
+    font-size: 62px;
+    font-weight: 600;
+    line-height: 68.2px;
+    margin-top: 60px;
+    text-align: left;
+}
+
+.main-heading .subtitle {
+    font-family: 'DM Sans';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25.2px;
+    letter-spacing: 0.04em;
+    text-align: left;
+}
+
+.artist-details,
+.artist-bio,
+.link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100;
+}
+
+.content-container {
+    margin: 0 5rem;
+    margin-top: 60px;
+}
+
+.artist-overview {
+    margin-top: 60px;
+    background-color: #e4d4c880;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+    column-gap: 20px;
+    border: none;
+    padding: 35px 60px;
+    border-radius: 20px;
+}
+
+.artist-details {
+    width: 330px;
+}
+
+.artist-name {
+    font-family: 'EB Garamond';
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 42px;
+    text-align: left;
+}
+
+.artist-role {
+    font-family: 'DM Sans';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 31.25px;
+    text-align: left;
+}
+
+.artist-bio {
+    width: 464px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25.2px;
+    letter-spacing: 0.04em;
+    text-align: justified;
+}
+
+.view-art-link {
+    font-family: 'DM Sans';
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 27.34px;
+    text-align: center;
+    color: var(--black-modified);
+}
+
+/**/
+
+.art-cards {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: (2, auto);
+    gap: 1.5rem;
+    border: none;
+}
+
+.card {
+    border: none;
+}
+
+.art-cards img {
+    display: block;
+    width: 100%;
+    border: none;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.card-description {
+    margin: auto;
+    width: 100%;
+}
+
+.card-name {
+    font-family: 'EB Garamond';
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2rem;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.card-price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 01rem !important;
+}
+
+.card-price p {
+    font-family: 'DM Sans';
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 46.87px;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+.card-price a {
+    display: inline-block;
+    width: 112px;
+    height: 40px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    opacity: 0px;
+    background-color: #e4d4c8;
+    text-align: center;
+    color: var(--black-modified);
+}
+
+.content-container {
+    margin-bottom: 5rem;
+}
+
+.blur {
+    background-color: transparent;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+button {
+    font-family: 'DM Sans';
+    font-size: 1.125rem;
+    width: 8rem;
+}
+
+.pagination button {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    background-color: white;
+    transition-duration: 0.5s;
+}
+
+.pagination button:hover:not(.active) {
+    background-color: #e4d4c8;
+}
+
+.pagination button:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.pagination button:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

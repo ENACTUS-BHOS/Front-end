@@ -1,3 +1,5 @@
+@inject IHttpClientFactory httpClientFactory
+
 <div class="artists">
     <h2>Komandamız</h2>
 
@@ -5,45 +7,11 @@
         <div class="image-galery slider" style="--count:@Count;
         --half-count:@HalfCount">
             <div class="slide-track">
-                <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-                <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-        <ArtistCard  Name="Arif Hajiyev" Major="Woodcarver"
-                    ImageUrl="/Images/Artists/ArifHajiyev.png" Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
+                @foreach(var member in members)
+                {
+                    <ArtistCard Name="@member.Name" Major="@member.Role" ImageUrl="@member.ImageUrl"
+                    Information="@member.Bio" />
+                }
             </div>
         </div>
     </div>
@@ -56,7 +24,7 @@
         }
 
         100% {
-            transform: translateX(calc(-620px * var(--half-count)))
+            transform: translateX(calc(-932px * var(--count)))
         }
     }
 
@@ -67,9 +35,10 @@
     }
 
     .slide-track {
-        animation: scroll 25s linear infinite;
+        animation: scroll 50s linear infinite;
+        animation-delay: 1s;
         display: flex;
-        width: calc(620px * var(--count));
+        width: calc(932px * var(--count));
     }
 
     .slide-track:hover {
@@ -80,4 +49,26 @@
 @code {
     public string? Count { get; set; } = "12";
     public string? HalfCount { get; set; } = "6";
+
+    public IEnumerable<Front_end.Models.Team> members { get; set; } = new List<Front_end.Models.Team>() { };
+
+    protected override async Task OnInitializedAsync()
+    {
+        var httpClient = httpClientFactory.CreateClient("Miras");
+
+        var response = await httpClient.GetAsync($"api/Team/GetAll");
+
+        var content = await response.Content.ReadAsStringAsync();
+
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new ApplicationException(content);
+        }
+
+        members = JsonConvert.DeserializeObject<List<Front_end.Models.Team>>(content);
+
+        Count = members.Count().ToString();
+
+        HalfCount = (members.Count() / 2).ToString();
+    }
 }

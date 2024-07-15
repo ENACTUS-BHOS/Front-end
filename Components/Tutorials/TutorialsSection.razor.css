@@ -2,8 +2,13 @@
     margin: 5rem;
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: (3, auto);
     gap: 1rem;
+}
+
+@media only screen and (max-width: 1500px) {
+    .section {
+      grid-template-columns: repeat(1, auto);
+    }
 }
 
 iframe {

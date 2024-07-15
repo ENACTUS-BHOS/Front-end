@@ -10,44 +10,8 @@
                 @foreach(var artist in AllArtists)
                 {
                     <ArtistCard Name="@artist.Name" Major="@artist.Major" ImageUrl="@artist.ImageUrl"
-                    Information="@artist.Description" />
+                    Information="@artist.Description" InstagramUrl="@artist.InstagramUrl" FacebookUrl="@artist.FacebookUrl" PhoneNumber="@artist.PhoneNumber"/>
                 }
-
-                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
-                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
-                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
-                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
-                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
-                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
-                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
-                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
-                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
-
-                <ArtistCard Name="Arif Hajiyev" Major="Woodcarver" ImageUrl="/Images/Artists/ArifHajiyev.png"
-                    Information="A passionate woodcarver, shapes intricate sculptures that evoke stories. His works have rooted in
-        love for nature and humanity." />
             </div>
         </div>
     </div>
@@ -60,7 +24,7 @@
         }
 
         100% {
-            transform: translateX(calc(-620px * var(--half-count)))
+            transform: translateX(calc(-932px * var(--count)))
         }
     }
 
@@ -71,9 +35,10 @@
     }
 
     .slide-track {
-        animation: scroll 25s linear infinite;
+        animation: scroll 50s linear infinite;
+        animation-delay: 1s;
         display: flex;
-        width: calc(620px * var(--count));
+        width: calc(932px * var(--count));
     }
 
     .slide-track:hover {
@@ -82,8 +47,8 @@
 </style>
 
 @code {
-    public string? Count { get; set; } = "12";
-    public string? HalfCount { get; set; } = "6";
+    public string? Count { get; set; } = "15";
+    public string? HalfCount { get; set; } = "7.5";
 
     public IEnumerable<Artist> AllArtists { get; set; } = new List<Artist>() { };
 
@@ -101,5 +66,9 @@
         }
 
         AllArtists = JsonConvert.DeserializeObject<List<Artist>>(content);
+
+        Count = AllArtists.Count().ToString();
+
+        HalfCount = (AllArtists.Count() / 2).ToString();
     }
 }
