@@ -3,7 +3,6 @@
     flex-direction: row;
     border: none;
     border-radius: 20px !important;
-    width: 620px !important;
     flex-shrink: 0;
 }
 
@@ -18,6 +17,7 @@
     border-bottom-left-radius: 20px !important;
     padding-top: 3.75rem;
     padding-left: 2.5rem;
+    width: 450px;
 }
 
 img {
@@ -25,6 +25,7 @@ img {
     border-bottom-right-radius: 20px !important;
     filter: grayscale(1);
     transition: all 0.5s ease;
+    width: 450px;
 }
 
 .card:hover>img {
@@ -63,8 +64,8 @@ h3 {
 p {
     font-family: 'DM Sans';
     font-weight: 400;
-    font-size: 1.125rem;
-    line-height: 1.575rem;
+    font-size: 1.1rem;
+    line-height: 1.4rem;
     padding-right: 2.5rem;
-    letter-spacing: 6%;
+    letter-spacing: 4%;
 }

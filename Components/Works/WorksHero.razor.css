@@ -1,58 +1,34 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  :root {
-    --primary-color: #60480a;
-    --secondary-color: #e4d4c8;
-    --black-modified: #201a1e;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  p {
-    padding: 0;
-    margin: 0;
-  }
-.text-overlay {
-  background-image: url("/Images/Works/background-image.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #ffffff;
-  height: 300px;
-  margin-top: 8.5rem;
-}
-a {
-  text-decoration: none;
-}
-.text-overlay a {
-  color: #ffffff;
-}
-.text-overlay .content-container {
-  width: 1280px;
-  padding-top: 40px;
-  margin: 0 5rem;
-  font-family: 'DM Sans';
+.hero {
+    position: relative;
+    width: 100%;
+    margin-top: 8.5rem;
 }
 
-.main-heading {
-  font-family: 'EB Garamond';
-  font-size: 62px;
-  font-weight: 600;
-  line-height: 68.2px;
-  margin-top: 60px;
-  text-align: left;
+img {
+    width: 100%;
 }
-.main-heading .subtitle {
-  font-family: 'DM Sans';
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 25.2px;
-  letter-spacing: 0.04em;
-  text-align: left;
+
+.slogan {
+    position: absolute;
+    top: 50%;
+    left: 5rem;
+    width: 46.2rem;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.title {
+    font-family: 'EB Garamond';
+    font-weight: 600;
+    font-size: 3.875rem;
+    line-height: 4.2625rem;
+}
+
+.subtitle {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.1rem;
+    font-family: 'DM Sans';
+    margin-top: 0.5rem;
 }

@@ -134,10 +134,17 @@
 
     public async Task OnNextClicked()
     {
-        if (page + 1 == Count / take || Count < take)
-        {
-            return;
-        }
+        var times = Count / take;
+
+		if (times * take < Count)
+		{
+			times += 1;
+		}
+
+		if (page + 1 == times)
+		{
+			return;
+		}
 
         index = 0;
 
