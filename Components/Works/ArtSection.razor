@@ -1,5 +1,13 @@
 @inject IHttpClientFactory httpClientFactory
 
+@using BlazorBootstrap
+
+<style>
+	.spinner {
+		color: #60480a !important;
+	}
+</style>
+
 <section class="search-menu">
 	<div class="container">
 		<div class="action-buttons">
@@ -24,7 +32,7 @@
 			</button>
 		</div>
 		<div class="search-bar">
-			<input @bind-value="@search" type="text" name="" id="search-input" placeholder="Əl işi axtarın" />
+			<input @bind-value="@search" type="text" name="" id="search-input" placeholder="Sənətkar və əl işi axtarın" />
 			<button @onclick="UpdateProductsData" type="button" class="btn-search">
 				Axtar <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
@@ -59,49 +67,58 @@
 
 
 <div class="content-container">
-	@foreach (var artist in artists)
+	@if (isLoading)
 	{
-		<section class="artist-overview">
-			<div class="artist-details">
-				<div class="artist-name">@artist.Name</div>
-				<div class="artist-role">@artist.Major</div>
-			</div>
+		<div class="d-flex justify-content-center">
+			<Spinner Type="SpinnerType.Border" Class="m-5 spinner" />
+		</div>
+	}
+	else
+	{
+		@foreach (var artist in artists)
+		{
+			<section class="artist-overview">
+				<div class="artist-details">
+					<div class="artist-name">@artist.Name</div>
+					<div class="artist-role">@artist.Major</div>
+				</div>
 
-			<div class="artist-bio">
-				@artist.Description
-			</div>
+				<div class="artist-bio">
+					@artist.Description
+				</div>
 
-			<div class="link">
-				<a href="/Works/Details/@artist.Id" class="view-art-link">Bütün işlərə bax
-					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M9.40436 2.6543L15.75 8.99995L9.40436 15.3456" stroke="#201A1E" stroke-width="1.7"
-							stroke-linecap="round" stroke-linejoin="round" />
-						<path d="M15.7499 9L2.25 9" stroke="#201A1E" stroke-width="1.7" stroke-linecap="round"
-							stroke-linejoin="round" />
-					</svg>
-				</a>
-			</div>
-		</section>
+				<div class="link">
+					<a href="/Works/Details/@artist.Id" class="view-art-link">Bütün işlərə bax
+						<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M9.40436 2.6543L15.75 8.99995L9.40436 15.3456" stroke="#201A1E" stroke-width="1.7"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M15.7499 9L2.25 9" stroke="#201A1E" stroke-width="1.7" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+					</a>
+				</div>
+			</section>
 
-		<!-- ----------------------------------------------- -->
+			<!-- ----------------------------------------------- -->
 
-		<section class="art-gallery">
+			<section class="art-gallery">
 		<div class="art-cards">
 			@foreach (var product in products[artist.Id])
-				{
-					<div class="card">
-						<img src="@product.ImageUrl" alt="art-image" />
-						<div class="card-description">
-							<div class="card-name">@product.Name</div>
-							<div class="card-price">
-								<p>@product.Price AZN</p>
-								<a @onclick="@(() => OrderProduct(product, artist))" class="card-get">Əldə et</a>
+					{
+						<div class="card">
+							<img src="@product.ImageUrl" alt="art-image" />
+							<div class="card-description">
+								<div class="card-name">@product.Name</div>
+								<div class="card-price">
+									<p>@product.Price AZN</p>
+									<a @onclick="@(() => OrderProduct(product, artist))" class="card-get">Əldə et</a>
+								</div>
 							</div>
 						</div>
-					</div>
-				}
-			</div>
-		</section>
+					}
+				</div>
+			</section>
+		}
 	}
 </div>
 
@@ -136,8 +153,12 @@
 
 	public int takeProducts = 9;
 
+	public bool isLoading = true;
+
 	public async Task UpdateProductsData()
 	{
+		isLoading = true;
+
 		artists = new List<Artist>();
 
 		products = new();
@@ -152,6 +173,8 @@
 
 			products.Add(artist.Id, artistsProducts ?? Enumerable.Empty<Product>());
 		}
+
+		isLoading = false;
 	}
 
 	protected override async Task OnInitializedAsync()
@@ -252,16 +275,7 @@
 
 		skip = page * take;
 
-		artists = await GetArtistsAsync(skip, take, search, minimumPrice, maximumPrice, isSortAscending);
-
-		products = new();
-
-		foreach (var artist in artists)
-		{
-			var artistsProducts = await GetProductsAsync(artist.Id, skipProducts, takeProducts);
-
-			products.Add(artist.Id, artistsProducts);
-		}
+		await UpdateProductsData();
 	}
 
 	public async Task OnPreviousClicked()
@@ -275,16 +289,7 @@
 
 		skip = page * take;
 
-		artists = await GetArtistsAsync(skip, take, search, minimumPrice, maximumPrice, isSortAscending);
-
-		products = new();
-
-		foreach (var artist in artists)
-		{
-			var artistsProducts = await GetProductsAsync(artist.Id, skipProducts, takeProducts);
-
-			products.Add(artist.Id, artistsProducts);
-		}
+		await UpdateProductsData();
 	}
 
 	public async Task OnAscendingSearchClick()

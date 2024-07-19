@@ -4,11 +4,10 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
-    body {
-        font-size: 10px;
+    html {
+        font-size: 5px;
     }
 }
-
 
 h1:focus {
     outline: none;
