@@ -4,11 +4,13 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Blazor.Bootstrap" Version="2.2.0" />
+    <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
     <PackageReference Include="Blazored.Modal" Version="7.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />

@@ -17,5 +17,6 @@ h2 {
 }
 
 img {
-    object-fit: none;
+    object-fit: contain;
+    max-width: 18%;
 }

@@ -57,14 +57,15 @@
 
                 <div class="lang-menu">
                     <div class="selected-lang dark navigation-link">
-                        @currentLanguage
+                        <img src="/Images/@(currentLanguage).png" />@currentLanguage
                     </div>
                     <ul>
-                        <li>
-                            English
+                        <li @onclick="SelectEnglish">
+                            <img src="/Images/Eng.png" />English
                         </li>
-                        <li>
-                            Azərbaycan
+
+                        <li @onclick="SelectAzerbaijani">
+                            <img src="/Images/Aze.png" />Azərbaycan
                         </li>
                     </ul>
                 </div>
@@ -83,11 +84,29 @@
 
     public void SelectEnglish()
     {
+        if (currentLanguage == "Eng")
+        {
+            return;
+        }
+
         currentLanguage = "Eng";
+
+        var uri = this.navigationManager.Uri.Last() == '/' ? this.navigationManager.Uri + "en" : this.navigationManager.Uri + "/en";
+
+        this.navigationManager.NavigateTo(uri);
     }
 
     public void SelectAzerbaijani()
     {
+        if (currentLanguage == "Aze")
+        {
+            return;
+        }
+
         currentLanguage = "Aze";
+
+        var uri = this.navigationManager.Uri.Replace("/en", "");
+
+        this.navigationManager.NavigateTo(uri);
     }
 }
