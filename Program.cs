@@ -1,3 +1,7 @@
+using System.Globalization;
+using System.Reflection;
+using System.Resources;
+using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Front_end;
@@ -8,6 +12,13 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 
 builder.RootComponents.Add<HeadOutlet>("head::after");
+
+builder.Services.AddLocalization(options =>
+{
+    options.ResourcesPath = "/Shared/Resources";
+});
+
+builder.Services.AddBlazoredLocalStorage();
 
 builder.Services.AddBlazoredModal();
 

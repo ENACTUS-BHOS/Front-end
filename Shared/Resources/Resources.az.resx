@@ -12,78 +12,78 @@
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
     <data name="homePage" xml:space="preserve">
-        <value>Home page</value>
+        <value>Ana səhifə</value>
     </data>
     <data name="worksPage" xml:space="preserve">
-        <value>Works</value>
+        <value>Əl işləri</value>
     </data>
     <data name="tutorialsPage" xml:space="preserve">
-        <value>Tutorials</value>
+        <value>Təlimlər</value>
     </data>
     <data name="exhibitionsPage" xml:space="preserve">
-        <value>Exhibitions</value>
+        <value>Sərgilər</value>
     </data>
     <data name="aboutUsPage" xml:space="preserve">
-        <value>About Us</value>
+        <value>Haqqımızda</value>
     </data>
     <data name="homeSlogan" xml:space="preserve">
-        <value>Let's live our legacy by overcoming the limitations!</value>
+        <value>Məhdudiyyətləri aşaraq Mirasımızı yaşadaq!</value>
     </data>
     <data name="mission" xml:space="preserve">
-        <value>Our mission</value>
+        <value>Misiyamız</value>
     </data>
     <data name="missionSloganPart1" xml:space="preserve">
-        <value>By promoting handicrafts of people with physical disabilities</value>
+        <value>Fiziki məhdudiyyətli insanların əl işlərini tanıdaraq</value>
     </data>
     <data name="missionSloganPart2" xml:space="preserve">
-        <value>we support them.</value>
+        <value>onlara dəstək oluruq.</value>
     </data>
     <data name="missionSloganPart3" xml:space="preserve">
-        <value>They are our Legacy!</value>
+        <value>Onlar bizim Mirsasımızdır!</value>
     </data>
     <data name="artists" xml:space="preserve">
-        <value>Let's get to know our artists</value>
+        <value>Sənətkarlarımızı tanıyaq</value>
     </data>
     <data name="homeQuote" xml:space="preserve">
-        <value>Every handiwork is a source of light and hope.</value>
+        <value>Hər bir əl işi bir göz nuru və ümid mənbəyidir.</value>
     </data>
     <data name="worksPagePass" xml:space="preserve">
-        <value>Handicrafts of people with physical disabilities</value>
+        <value>Fiziki məhdudiyyətli şəxslərin əl işləri</value>
     </data>
     <data name="seeWorks" xml:space="preserve">
-        <value>Look at the handicrafts</value>
+        <value>Əl işlərinə bax</value>
     </data>
     <data name="tutorialsPagePass" xml:space="preserve">
-        <value>Learn the art with us</value>
+        <value>Sənəti bizimlə öyrən</value>
     </data>
     <data name="exhibitionsPagePass" xml:space="preserve">
-        <value>Opportunity to sell handicrafts</value>
-    </data>
-    <data name="exhibitionsPagePassSubtitle" xml:space="preserve">
-        <value>Exhibitions</value>
-    </data>
-    <data name="partners" xml:space="preserve">
-        <value>Our partners</value>
-    </data>
-    <data name="artistsSpeak" xml:space="preserve">
-        <value>The Artists Speak</value>
+        <value>Əl işlərini satmaq imkanı</value>
     </data>
     <data name="tutorialsPagePassSubtitle" xml:space="preserve">
-        <value>Tutorials</value>
+        <value>Təlimlər</value>
+    </data>
+    <data name="exhibitionsPagePassSubtitle" xml:space="preserve">
+        <value>Sərgilər</value>
+    </data>
+    <data name="partners" xml:space="preserve">
+        <value>Tərəfdaşlarımız</value>
+    </data>
+    <data name="artistsSpeak" xml:space="preserve">
+        <value>Danışır Sənətkarlar</value>
     </data>
     <data name="logoSlogan" xml:space="preserve">
-        <value>Let's live our rich cultural legacy with handicrafts</value>
+        <value>Əl işləri ilə zəngin mədəni mirasımızı yaşadaq</value>
     </data>
     <data name="website" xml:space="preserve">
-        <value>Website</value>
+        <value>Veb sayt</value>
     </data>
     <data name="contactUs" xml:space="preserve">
-        <value>Contact Us</value>
+        <value>Bizimlə Əlaqə</value>
     </data>
     <data name="email" xml:space="preserve">
         <value>Email</value>
     </data>
     <data name="callUs" xml:space="preserve">
-        <value>Phone number</value>
+        <value>Zəng Edin</value>
     </data>
 </root>

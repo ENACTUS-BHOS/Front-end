@@ -1,7 +1,8 @@
 @inject IHttpClientFactory httpClientFactory
+@inject ILocalStorageService LocalStorageService
 
 <div class="artists">
-    <h2>Sənətkarlarımızı tanıyaq</h2>
+    <h2>@Resources.artists</h2>
 
     <div class="artists-cards">
         <div class="image-galery slider" style="--count:@Count;
@@ -54,6 +55,12 @@
 
     protected override async Task OnInitializedAsync()
     {
+        var currentCulture = await LocalStorageService.GetItemAsync<string>("currentCulture");
+        
+        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
+        
+        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
+        
         var httpClient = httpClientFactory.CreateClient("Miras");
 
         var response = await httpClient.GetAsync($"api/Artists/GetAll");

@@ -1,24 +1,26 @@
+@inject ILocalStorageService LocalStorageService
+
 <div class="footer">
     <div class="website">
-        <div class="title">Veb sayt</div>
+        <div class="title">@Resources.website</div>
 
-        <a href="/">Ana Səhifə</a>
+        <a href="/">@Resources.homePage</a>
 
-        <a href="/Works">Əl İşləri</a>
+        <a href="/Works">@Resources.worksPage</a>
 
-        <a href="/Tutorials">Təlimlər</a>
+        <a href="/Tutorials">@Resources.tutorialsPage</a>
 
-        <a href="/Exhibitions">Sərgilər</a>
+        <a href="/Exhibitions">@Resources.exhibitionsPage</a>
 
-        <a href="/AboutUs">Haqqımızda</a>
+        <a href="/AboutUs">@Resources.aboutUsPage</a>
     </div>
 
     <div class="contact-info">
-        <div class="title">Bizimlə Əlaqə</div>
+        <div class="title">@Resources.contactUs</div>
 
-        <div class="email">Email: enactus_bhos@bhos.edu.az</div>
+        <div class="email">@Resources.email: enactus_bhos@bhos.edu.az</div>
 
-        <div class="phone">Zəng Edin: +994-55-744-90-07</div>
+        <div class="phone">@Resources.callUs: +994-55-744-90-07</div>
 
         <div class="media">
             <a href="https://www.instagram.com/miraasartss?utm_source=ig_web_button_share_sheet&igsh=ODdmZWVhMTFiMw==">
@@ -48,3 +50,14 @@
 </div>
 
 <div class="copyright">©All rights received by “Miras”</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        var currentCulture = await LocalStorageService.GetItemAsync<string>("currentCulture");
+        
+        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
+        
+        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
+    }
+}

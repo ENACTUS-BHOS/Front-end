@@ -1,4 +1,6 @@
-<h2>Tərəfdaşlarımız</h2>
+@inject ILocalStorageService LocalStorageService
+
+<h2>@Resources.partners</h2>
 
 <div class="partners-container">
     <img src="/Images/socar-logo.png" alt="SOCAR logo"/>
@@ -13,3 +15,14 @@
 
     <img src="/Images/bhos-logo.png" alt="BHOS logo"/>
 </div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        var currentCulture = await LocalStorageService.GetItemAsync<string>("currentCulture");
+        
+        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
+        
+        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
+    }
+}
