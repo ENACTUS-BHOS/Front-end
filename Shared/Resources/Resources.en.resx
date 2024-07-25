@@ -86,4 +86,64 @@
     <data name="callUs" xml:space="preserve">
         <value>Phone number</value>
     </data>
+    <data name="sort" xml:space="preserve">
+        <value>Sort</value>
+    </data>
+    <data name="filter" xml:space="preserve">
+        <value>Filter</value>
+    </data>
+    <data name="search" xml:space="preserve">
+        <value>Search</value>
+    </data>
+    <data name="searchPlaceholder" xml:space="preserve">
+        <value>Search artists and handiworks</value>
+    </data>
+    <data name="ascendingPriceSort" xml:space="preserve">
+        <value>Sort by ascending price</value>
+    </data>
+    <data name="descendingPriceSort" xml:space="preserve">
+        <value>Sort by descending price</value>
+    </data>
+    <data name="minimumPrice" xml:space="preserve">
+        <value>Minimum price</value>
+    </data>
+    <data name="maximumPrice" xml:space="preserve">
+        <value>Maximum price</value>
+    </data>
+    <data name="socialMediaAccounts" xml:space="preserve">
+        <value>Social media accounts</value>
+    </data>
+    <data name="phoneNumber" xml:space="preserve">
+        <value>Phone number</value>
+    </data>
+    <data name="orderForm" xml:space="preserve">
+        <value>Order Form</value>
+    </data>
+    <data name="orderFormDescription" xml:space="preserve">
+        <value>In order for us to deliver your order to the craftsman, please fill in the following information.</value>
+    </data>
+    <data name="nameField" xml:space="preserve">
+        <value>Full Name</value>
+    </data>
+    <data name="contactField" xml:space="preserve">
+        <value>Contact Number</value>
+    </data>
+    <data name="emailField" xml:space="preserve">
+        <value>Email Address</value>
+    </data>
+    <data name="notesField" xml:space="preserve">
+        <value>Additional Notes</value>
+    </data>
+    <data name="confirm" xml:space="preserve">
+        <value>Confirm</value>
+    </data>
+    <data name="nameFieldPlaceholder" xml:space="preserve">
+        <value>Enter your Full Name</value>
+    </data>
+    <data name="emailExample" xml:space="preserve">
+        <value>sample@mail.com</value>
+    </data>
+    <data name="notesFieldPlaceholder" xml:space="preserve">
+        <value>Please specify if you have any special order notes</value>
+    </data>
 </root>

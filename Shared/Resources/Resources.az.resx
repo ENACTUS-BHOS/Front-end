@@ -86,4 +86,64 @@
     <data name="callUs" xml:space="preserve">
         <value>Zəng Edin</value>
     </data>
+    <data name="sort" xml:space="preserve">
+        <value>Sırala</value>
+    </data>
+    <data name="filter" xml:space="preserve">
+        <value>Filtr</value>
+    </data>
+    <data name="search" xml:space="preserve">
+        <value>Axtar</value>
+    </data>
+    <data name="searchPlaceholder" xml:space="preserve">
+        <value>Sənətkar və əl işi axtarın</value>
+    </data>
+    <data name="ascendingPriceSort" xml:space="preserve">
+        <value>Artan qiymət üzrə sırala</value>
+    </data>
+    <data name="descendingPriceSort" xml:space="preserve">
+        <value>Azalan qiymət üzrə sırala</value>
+    </data>
+    <data name="minimumPrice" xml:space="preserve">
+        <value>Minimum qiymət</value>
+    </data>
+    <data name="maximumPrice" xml:space="preserve">
+        <value>Maximum qiymət</value>
+    </data>
+    <data name="socialMediaAccounts" xml:space="preserve">
+        <value>Sosial media hesabları</value>
+    </data>
+    <data name="phoneNumber" xml:space="preserve">
+        <value>Telefon nömrəsi</value>
+    </data>
+    <data name="orderForm" xml:space="preserve">
+        <value>Sifariş Formu</value>
+    </data>
+    <data name="orderFormDescription" xml:space="preserve">
+        <value>Sizin sifarişinizi sənətkara çatdırmağımız üçün, zəhmət olmasa aşağıdakı məlumatları doldurun.</value>
+    </data>
+    <data name="nameField" xml:space="preserve">
+        <value>Ad Soyad</value>
+    </data>
+    <data name="contactField" xml:space="preserve">
+        <value>Əlaqə Nömrəsi</value>
+    </data>
+    <data name="emailField" xml:space="preserve">
+        <value>Email Ünvanı</value>
+    </data>
+    <data name="notesField" xml:space="preserve">
+        <value>Əlavə Qeyd</value>
+    </data>
+    <data name="confirm" xml:space="preserve">
+        <value>Təsdiqlə</value>
+    </data>
+    <data name="nameFieldPlaceholder" xml:space="preserve">
+        <value>Adınızı və Soyadınızı daxil edin</value>
+    </data>
+    <data name="emailExample" xml:space="preserve">
+        <value>nümunə@mail.com</value>
+    </data>
+    <data name="notesFieldPlaceholder" xml:space="preserve">
+        <value>Sifarişlə bağlı xüsusi qeydiniz varsa qeyd edin</value>
+    </data>
 </root>

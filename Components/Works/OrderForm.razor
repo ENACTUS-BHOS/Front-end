@@ -1,4 +1,5 @@
 @inject IHttpClientFactory httpClientFactory
+@inject ILocalStorageService LocalStorageService
 
 <div class="order-container">
     <div class="product-info">
@@ -11,24 +12,23 @@
             <p class="product-price">@Price AZN</p>
         </div>
     </div>
-    <div class="title">Sifariş Formu</div>
+    <div class="title">@Resources.orderForm</div>
     <div class="description">
-        Sizin sifarişinizi sənətkara çatdırmağımız üçün, zəhmət olmasa,
-        aşağıdakı məlumatları doldurun.
+        @Resources.orderFormDescription
     </div>
     <form action="/order-page">
-        <label for="customer-name">Ad Soyad</label>
-        <input @bind-value="@order.FullName" type="text" name="" id="customer-name" placeholder="Adınızı və Soyadınızı daxil edin" />
+        <label for="customer-name">@Resources.nameField</label>
+        <input @bind-value="@order.FullName" type="text" name="" id="customer-name" placeholder="@Resources.nameFieldPlaceholder" />
 
-        <label for="customer-contact">Əlaqə Nömrəsi</label>
+        <label for="customer-contact">@Resources.contactField</label>
         <input @bind-value="@order.PhoneNumber" type="text" name="" id="customer-contact" placeholder="+994-000-000-00-00" />
 
-        <label for="customer-email">Email Ünvanı</label>
-        <input @bind-value="@order.Email" type="email" name="" id="customer-email" placeholder="nümunə@mail.com" />
+        <label for="customer-email">@Resources.emailField</label>
+        <input @bind-value="@order.Email" type="email" name="" id="customer-email" placeholder="@Resources.emailExample" />
 
-        <label for="customer-note">Əlavə Qeyd</label>
-        <input @bind-value="@order.AdditionalInformation" type="text" name="" id="customer-note" placeholder="Sifarişlə Bağlı xüsusi qeydiniz varsa qeyd edin" />
-        <button @onclick="OrderAsync" type="button" class="order-btn">Təsdiqlə</button>
+        <label for="customer-note">@Resources.notesField</label>
+        <input @bind-value="@order.AdditionalInformation" type="text" name="" id="customer-note" placeholder="@Resources.notesFieldPlaceholder" />
+        <button @onclick="OrderAsync" type="button" class="order-btn">@Resources.confirm</button>
     </form>
 </div>
 
@@ -68,5 +68,14 @@
         }
 
         await BlazoredModal.CloseAsync();
+    }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        var currentCulture = await LocalStorageService.GetItemAsync<string>("currentCulture");
+
+        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
+
+        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
     }
 }

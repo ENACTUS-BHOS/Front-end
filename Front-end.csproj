@@ -24,6 +24,22 @@
     <EmbeddedResource Update="Shared\Resources\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\English\About.razor" />
+    <_ContentIncludedByDefault Remove="Pages\English\Errors\Error404.razor" />
+    <_ContentIncludedByDefault Remove="Pages\English\Errors\Error500.razor" />
+    <_ContentIncludedByDefault Remove="Pages\English\Exhibitions.razor" />
+    <_ContentIncludedByDefault Remove="Pages\English\Home.razor" />
+    <_ContentIncludedByDefault Remove="Pages\English\Tutorials.razor" />
+    <_ContentIncludedByDefault Remove="Pages\English\WorkDetails.razor" />
+    <_ContentIncludedByDefault Remove="Pages\English\Works.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="Pages\Errors\Error404.razor" />
+    <AdditionalFiles Include="Pages\Errors\Error500.razor" />
   </ItemGroup> 
 
 </Project>

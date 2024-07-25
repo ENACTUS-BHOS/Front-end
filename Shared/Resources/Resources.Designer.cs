@@ -194,5 +194,125 @@ namespace Front_end.Shared.Resources {
                 return ResourceManager.GetString("callUs", resourceCulture);
             }
         }
+        
+        public static string sort {
+            get {
+                return ResourceManager.GetString("sort", resourceCulture);
+            }
+        }
+        
+        public static string filter {
+            get {
+                return ResourceManager.GetString("filter", resourceCulture);
+            }
+        }
+        
+        public static string search {
+            get {
+                return ResourceManager.GetString("search", resourceCulture);
+            }
+        }
+        
+        public static string searchPlaceholder {
+            get {
+                return ResourceManager.GetString("searchPlaceholder", resourceCulture);
+            }
+        }
+        
+        public static string ascendingPriceSort {
+            get {
+                return ResourceManager.GetString("ascendingPriceSort", resourceCulture);
+            }
+        }
+        
+        public static string descendingPriceSort {
+            get {
+                return ResourceManager.GetString("descendingPriceSort", resourceCulture);
+            }
+        }
+        
+        public static string minimumPrice {
+            get {
+                return ResourceManager.GetString("minimumPrice", resourceCulture);
+            }
+        }
+        
+        public static string maximumPrice {
+            get {
+                return ResourceManager.GetString("maximumPrice", resourceCulture);
+            }
+        }
+        
+        public static string socialMediaAccounts {
+            get {
+                return ResourceManager.GetString("socialMediaAccounts", resourceCulture);
+            }
+        }
+        
+        public static string phoneNumber {
+            get {
+                return ResourceManager.GetString("phoneNumber", resourceCulture);
+            }
+        }
+        
+        public static string orderForm {
+            get {
+                return ResourceManager.GetString("orderForm", resourceCulture);
+            }
+        }
+        
+        public static string orderFormDescription {
+            get {
+                return ResourceManager.GetString("orderFormDescription", resourceCulture);
+            }
+        }
+        
+        public static string nameField {
+            get {
+                return ResourceManager.GetString("nameField", resourceCulture);
+            }
+        }
+        
+        public static string contactField {
+            get {
+                return ResourceManager.GetString("contactField", resourceCulture);
+            }
+        }
+        
+        public static string emailField {
+            get {
+                return ResourceManager.GetString("emailField", resourceCulture);
+            }
+        }
+        
+        public static string notesField {
+            get {
+                return ResourceManager.GetString("notesField", resourceCulture);
+            }
+        }
+        
+        public static string confirm {
+            get {
+                return ResourceManager.GetString("confirm", resourceCulture);
+            }
+        }
+        
+        public static string nameFieldPlaceholder {
+            get {
+                return ResourceManager.GetString("nameFieldPlaceholder", resourceCulture);
+            }
+        }
+        
+        public static string emailExample {
+            get {
+                return ResourceManager.GetString("emailExample", resourceCulture);
+            }
+        }
+        
+        public static string notesFieldPlaceholder {
+            get {
+                return ResourceManager.GetString("notesFieldPlaceholder", resourceCulture);
+            }
+        }
     }
 }

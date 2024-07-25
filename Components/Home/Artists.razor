@@ -8,12 +8,23 @@
         <div class="image-galery slider" style="--count:@Count;
         --half-count:@HalfCount">
             <div class="slide-track">
-                @foreach(var artist in AllArtists)
+                @if (currentCulture == "az-AZ")
                 {
-                    <ArtistCard Name="@artist.Name" Major="@artist.Major" ImageUrl="@artist.ImageUrl"
-                    Information="@artist.Description" InstagramUrl="@artist.InstagramUrl" FacebookUrl="@artist.FacebookUrl" PhoneNumber="@artist.PhoneNumber"/>
+                    @foreach (var artist in AllArtists)
+                    {
+                        <ArtistCard Name="@artist.Name" Major="@artist.Major" ImageUrl="@artist.ImageUrl"
+                                    Information="@artist.Description" InstagramUrl="@artist.InstagramUrl" FacebookUrl="@artist.FacebookUrl" PhoneNumber="@artist.PhoneNumber"/>
+                    }
                 }
-            </div>
+                else if (currentCulture == "en-EN")
+                {
+                    @foreach (var artist in AllArtists)
+                    {
+                        <ArtistCard Name="@artist.NameEn" Major="@artist.MajorEn" ImageUrl="@artist.ImageUrl"
+                                    Information="@artist.DescriptionEn" InstagramUrl="@artist.InstagramUrl" FacebookUrl="@artist.FacebookUrl" PhoneNumber="@artist.PhoneNumber"/>
+                    }
+                }
+            </div >
         </div>
     </div>
 </div>
@@ -51,16 +62,21 @@
     public string? Count { get; set; } = "15";
     public string? HalfCount { get; set; } = "7.5";
 
+    public string currentCulture = string.Empty;
+
     public IEnumerable<Artist> AllArtists { get; set; } = new List<Artist>() { };
 
     protected override async Task OnInitializedAsync()
     {
-        var currentCulture = await LocalStorageService.GetItemAsync<string>("currentCulture");
-        
+        currentCulture = await LocalStorageService.GetItemAsync<string>("currentCulture");
+
         CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
-        
+
         CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
-        
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
         var httpClient = httpClientFactory.CreateClient("Miras");
 
         var response = await httpClient.GetAsync($"api/Artists/GetAll");
@@ -78,4 +94,5 @@
 
         HalfCount = (AllArtists.Count() / 2).ToString();
     }
+
 }

@@ -1,14 +1,17 @@
+@page "/Works"
 @inject ILocalStorageService LocalStorageService
 
-<div class="hero">
-    <img src="/Images/Works/background-image.png" alt="team photo"/>
+<PageTitle>@Resources.worksPage</PageTitle>
 
-    <div class="slogan">
-        <div class="title">@Resources.worksPage</div>
+<WorksHero></WorksHero>
 
-        <div class="subtitle">@Resources.homeQuote</div>
-    </div>
-</div>
+<SearchMenu></SearchMenu>
+
+<ArtSection></ArtSection>
+
+<Logo></Logo>
+
+<Footer></Footer>
 
 @code {
 

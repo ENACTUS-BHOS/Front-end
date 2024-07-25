@@ -1,0 +1,157 @@
+.section {
+    margin: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media only screen and (max-width: 1500px) {
+    .section {
+        grid-template-columns: repeat(1, auto);
+    }
+}
+
+.exhibition img {
+    border-radius: 1.25rem;
+    width: 670px;
+    height: 380px;
+}
+
+.exhibition {
+    background-color: #e4d4c8 !important;
+    padding: 1rem;
+    border-radius: 1.25rem;
+    cursor: pointer;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+p {
+    margin: 2rem 1rem 1rem !important;
+    font-family: 'DM Sans';
+    font-size: 1.2rem;
+    letter-spacing: 5%;
+    text-align: center;
+}
+
+button {
+    font-family: 'DM Sans';
+    font-size: 1.125rem;
+    width: 8rem;
+}
+
+.pagination button {
+    color: black;
+    float: left;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    background-color: white;
+    transition-duration: 0.5s;
+}
+
+.pagination button:hover:not(.active) {
+    background-color: #e4d4c8;
+}
+
+.pagination button:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.pagination button:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.search-menu .container {
+    font-family: 'DM Sans';
+    padding: 0 5rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+}
+
+.search-menu button {
+    background-color: #e4d4c8;
+    color: var(--black-modified);
+    vertical-align: middle;
+    align-items: center;
+    border: none;
+}
+
+.search-bar {
+    margin: 0 0 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #60480a;
+    --secondary-color: #e4d4c8;
+    --black-modified: #201a1e;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.action-buttons button {
+    font-family: 'DM Sans';
+    font-size: 1.3125rem;
+    font-weight: 400;
+    line-height: 1.70875rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.625rem;
+    width: 9.6875rem;
+    margin-right: 0.625rem;
+}
+
+#search-input {
+    width: 26.25rem;
+    padding: 1.25rem 12.5rem 1.3125rem 1.875rem;
+    border-radius: 1.875rem;
+    background: #e2e6e780;
+    border: none;
+}
+
+.btn-search {
+    font-family: 'DM Sans';
+    font-size: 1.3125rem;
+    font-weight: 400;
+    line-height: 1.70875rem;
+    text-align: center;
+    width: 12.5rem;
+    height: 3.75rem;
+    padding: 0.625rem 1rem 0.625rem 1.25rem;
+    gap: 0.625rem;
+    border-radius: 1.875rem;
+}
+
+input::placeholder {
+    width: 100%;
+    height: 1.1875rem;
+    gap: 0px;
+    opacity: 0.5;
+}
+
+input {
+    padding: 1.25rem 1.875rem !important;
+}
