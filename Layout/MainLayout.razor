@@ -1,6 +1,8 @@
-﻿@inherits LayoutComponentBase
-
+﻿@using System.Resources
+@inherits LayoutComponentBase
+@inject ILocalStorageService LocalStorageService
 @inject NavigationManager navigationManager
+@inject IJSRuntime JS
 
 <div class="page">
     <main>
@@ -8,43 +10,116 @@
             @if (this.navigationManager.BaseUri == this.navigationManager.Uri)
             {
                 <a class="logo" href="/">
-                    <img src="/Images/logo.png" />
+                    <img src="/Images/logo.png"/>
                 </a>
 
                 <div class="navigation-container">
-                <a class="navigation-link" href="/">Ana səhifə</a>
+                    <a class="navigation-link" href="/">@Resources.homePage</a>
 
-                <a class="navigation-link" href="/Works">Əl işləri</a>
+                    <a class="navigation-link" href="/Works">@Resources.worksPage</a>
 
-                <a class="navigation-link" href="/Tutorials">Təlimlər</a>
+                    <a class="navigation-link" href="/Tutorials">@Resources.tutorialsPage</a>
 
-                <a class="navigation-link" href="/Exhibitions">Sərgilər</a>
+                    <a class="navigation-link" href="/Exhibitions">@Resources.exhibitionsPage</a>
 
-                <a class="navigation-link" href="/AboutUs">Haqqımızda</a>
-            </div>
+                    <a class="navigation-link" href="/AboutUs">@Resources.aboutUsPage</a>
+
+                    <div class="lang-menu">
+                        <div class="selected-lang navigation-link">
+                            <img src="/Images/@(currentLanguage).png"/>@currentLanguage
+                        </div>
+                        <ul>
+                            <li @onclick="@(async () => { await SelectLanguageAsync("Eng"); })">
+                                <img src="/Images/Eng.png"/>English
+                            </li>
+
+                            <li @onclick="@(async () => { await SelectLanguageAsync("Aze"); })">
+                                <img src="/Images/Aze.png"/>Azərbaycan
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             }
             else
             {
                 <a class="logo" href="/">
-                    <img src="/Images/dark-logo.png" />
+                    <img src="/Images/dark-logo.png"/>
                 </a>
 
                 <div class="navigation-container">
-                <a style="color: #60480b" class="navigation-link" href="/">Ana səhifə</a>
+                    <a style="color: #60480b" class="navigation-link" href="/">@Resources.homePage</a>
 
-                <a style="color: #60480b" class="navigation-link" href="/Works">Əl işləri</a>
+                    <a style="color: #60480b" class="navigation-link" href="/Works">@Resources.worksPage</a>
 
-                <a style="color: #60480b" class="navigation-link" href="/Tutorials">Təlimlər</a>
+                    <a style="color: #60480b" class="navigation-link" href="/Tutorials">@Resources.tutorialsPage</a>
 
-                <a style="color: #60480b" class="navigation-link" href="/Exhibitions">Sərgilər</a>
+                    <a style="color: #60480b" class="navigation-link" href="/Exhibitions">@Resources.exhibitionsPage</a>
 
-                <a style="color: #60480b" class="navigation-link" href="/AboutUs">Haqqımızda</a>
-            </div>
+                    <a style="color: #60480b" class="navigation-link" href="/AboutUs">@Resources.aboutUsPage</a>
+
+                    <div class="lang-menu">
+                        <div class="selected-lang dark navigation-link">
+                            <img src="/Images/@(currentLanguage).png"/>@currentLanguage
+                        </div>
+                        <ul>
+                            <li @onclick="@(async () => { await SelectLanguageAsync("Eng"); })">
+                                <img src="/Images/Eng.png"/>English
+                            </li>
+
+                            <li @onclick="@(async () => { await SelectLanguageAsync("Aze"); })">
+                                <img src="/Images/Aze.png"/>Azərbaycan
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             }
         </div>
 
         <article class="content px-4">
-            @Body
+            <ErrorBoundary>
+                <ChildContent>
+                    @Body
+                </ChildContent>
+                <ErrorContent>
+                    <ServerError></ServerError>
+                </ErrorContent>
+            </ErrorBoundary>
         </article>
     </main>
 </div>
+
+@code {
+    private string currentLanguage = "Aze";
+    
+    private CultureInfo[] supportedCultures = new[]
+    {
+        new CultureInfo("az-AZ"),
+        new CultureInfo("en-EN"),
+    };
+
+    private CultureInfo? selectedCulture;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        selectedCulture = CultureInfo.CurrentCulture;
+
+        currentLanguage = selectedCulture.Name == "az-AZ" ? "Aze" : "Eng";
+    }
+
+    private async Task SelectLanguageAsync(string language)
+    {
+        currentLanguage = language;
+
+        var culture = language == "Eng" ? "en-EN" : "az-AZ";
+
+        selectedCulture = CultureInfo.GetCultureInfo(culture);
+        
+
+        if (true)
+        {
+            await JS.InvokeVoidAsync("blazorCulture.set", selectedCulture!.Name);
+
+            navigationManager.NavigateTo(navigationManager.Uri, forceLoad: true);
+        }
+    }
+}

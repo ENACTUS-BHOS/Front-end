@@ -1,0 +1,90 @@
+@page "/Exhibitions/{Id:int}"
+
+@inject IHttpClientFactory httpClientFactory
+@inject ILocalStorageService LocalStorageService
+
+@using BlazorBootstrap
+
+<style>
+    .spinner {
+        color: #60480a !important;
+    }
+</style>
+
+<PageTitle>@Resources.exhibitionsPage</PageTitle>
+
+<ExhibitionHero></ExhibitionHero>
+
+<section class="exhibition-section">
+    <div class="overview">
+        <video controls
+               preload="auto">
+            <source src="@Exhibition.VideoUrl" type='video/mp4'>
+        </video>
+        
+        <div class="information">
+            <div class="title">@Exhibition.Name</div>
+            
+            <div class="description">@Exhibition.Description</div>
+        </div>
+    </div>
+    
+    <div class="gallery">
+        @foreach (var imageUrl in Exhibition.ImageUrls)
+        {
+            <div class="gallery-item">
+                <figure>
+                    <img src="@imageUrl" alt="exhibition image" />
+                </figure>
+            </div>
+        }
+    </div>
+</section>
+
+<Logo></Logo>
+
+<Footer></Footer>
+
+@code {
+    [Parameter] public int Id { get; set; }
+
+    public Exhibition Exhibition { get; set; } = new();
+    
+    private string currentCulture = String.Empty;
+    
+    private bool isLoading = true;
+
+    private async Task UpdateExhibitionData()
+    {
+        isLoading = true;
+
+        Exhibition = await GetExhibitionById(Id);
+        
+        isLoading = false;
+    }
+    
+    
+    
+    protected override async Task OnParametersSetAsync()
+    {
+        await UpdateExhibitionData();
+    }
+    
+    public async Task<Exhibition> GetExhibitionById(int Id)
+    {
+        var httpClient = httpClientFactory.CreateClient("Miras");
+
+        var response = await httpClient.GetAsync($"api/Exhibition/GetById?id={Id}");
+
+        var content = await response.Content.ReadAsStringAsync();
+
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new ApplicationException(content);
+        }
+
+        var result = JsonConvert.DeserializeObject<Exhibition>(content);
+
+        return result;
+    }
+}

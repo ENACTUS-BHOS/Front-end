@@ -1,6 +1,7 @@
 @page "/Works"
+@inject ILocalStorageService LocalStorageService
 
-<PageTitle>Əl işləri</PageTitle>
+<PageTitle>@Resources.worksPage</PageTitle>
 
 <WorksHero></WorksHero>
 
@@ -11,3 +12,16 @@
 <Logo></Logo>
 
 <Footer></Footer>
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        var currentCulture = await LocalStorageService.GetItemAsync<string>("currentCulture");
+
+        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
+
+        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
+    }
+
+}

@@ -7,10 +7,10 @@
   /*container*/
   .order-container {
     width: 630px;
-    border-radius: 20px;
-    padding-left: 60px;
-    padding-right: 42px;
-    padding: 60px 42px 60px 60px;
+    border-radius: 1.25rem;
+    padding-left: 3.75rem;
+    padding-right: 2.625rem;
+    padding: 3.75rem 2.625rem 3.75rem 3.75rem;
     background-color: #e4d4c8ec;
   }
   
@@ -18,7 +18,7 @@
   .product-info {
     display: grid;
     grid-template-columns: 226px 264px;
-    column-gap: 40px;
+    column-gap: 2.5rem;
   }
   
   .product-image img {
@@ -38,35 +38,35 @@
   }
   .artist-name {
     font-family: DM Sans;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 400;
-    line-height: 31.25px;
+    line-height: 1.9531rem;
     text-align: left;
   }
   .product-price {
     font-family: DM Sans;
     font-size: 36px;
     font-weight: 700;
-    line-height: 46.87px;
+    line-height: 2.93rem;
     text-align: left;
-    margin-top: 25px;
+    margin-top: 1.51rem;
   }
   
   /*form title and description*/
   .title {
-    margin-top: 40px;
+    margin-top: 2.5rem;
     font-family: EB Garamond;
-    font-size: 42px;
+    font-size: 2.625rem;
     font-weight: 600;
-    line-height: 42px;
+    line-height: 2.625rem;
     text-align: left;
     color: #201a1e;
   }
   .description {
     font-family: DM Sans;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
-    line-height: 25.2px;
+    line-height: 1.575rem;
     letter-spacing: 0.04em;
     text-align: left;
     color: #201a1e;
@@ -75,7 +75,7 @@
   
   /*form elemets*/
   form {
-    margin-top: 40px;
+    margin-top: 2.5rem;
   }
   form label {
     font-family: EB Garamond;
@@ -85,7 +85,7 @@
     text-align: left;
     color: #201a1e;
     display: block;
-    margin-top: 20px;
+    margin-top: 1.25rem;
     margin-bottom: 08px;
   }
   form input {
@@ -93,14 +93,14 @@
     height: 47px;
     border-radius: 6px;
     border: none;
-    padding-left: 20px;
+    padding-left: 1.25rem;
     padding-top: 08px;
     display: block;
   }
   
   input::placeholder {
     font-family: Inter;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 19.36px;
     text-align: left;
@@ -108,14 +108,14 @@
   
   /*button*/
   .order-btn {
-    width: 197px;
-    height: 60px;
-    padding: 10px 17px 10px 20px;
-    border-radius: 30px;
+    width: 12.5rem;
+    height: 3.75rem;
+    padding: 0.625rem 1rem 0.625rem 1.25rem;
+    border-radius: 1.875rem;
     border: none;
     color: #201a1e;
     background-color: white;
-    font-size: 21px;
+    font-size: 1.3125rem;
     margin-top: 54px;
     margin-left: 306px;
   }

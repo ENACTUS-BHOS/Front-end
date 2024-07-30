@@ -1,286 +1,287 @@
-@page "/Works/Details/{Id:int}"
+@page "/Works/{Id:int}"
 
 @inject IHttpClientFactory httpClientFactory
+@inject ILocalStorageService LocalStorageService
 
+@using BlazorBootstrap
 
-<PageTitle>Əl işi</PageTitle>
+<style>
+    .spinner {
+        color: #60480a !important;
+    }
+</style>
 
-<WorksHero />
+<PageTitle>@Resources.worksPage</PageTitle>
+
+<WorksHero/>
 
 <section class="search-menu">
-	<div class="container">
-		<div class="action-buttons">
-			<button @onclick="OnSortClick" type="button" class="btn-order">
-				<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M9.5 1.5L2 5.25L9.5 9L17 5.25L9.5 1.5Z" stroke="#201A1E" stroke-width="1.5"
-						stroke-linecap="round" stroke-linejoin="round" />
-					<path d="M2 12.75L9.5 16.5L17 12.75" stroke="#201A1E" stroke-width="1.5" stroke-linecap="round"
-						stroke-linejoin="round" />
-					<path d="M2 9L9.5 12.75L17 9" stroke="#201A1E" stroke-width="1.5" stroke-linecap="round"
-						stroke-linejoin="round" />
-				</svg>
-				Sırala
-			</button>
-			<button @onclick="OnFilterClick" type="button" class="btn-filter">
-				<svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path
-						d="M13.9562 2.48429C14.3684 1.99682 14.0219 1.25 13.3835 1.25H1.61648C0.978057 1.25 0.631556 1.99681 1.0438 2.48429L5.82268 8.13532C5.93718 8.27071 6 8.44229 6 8.61961V12.7865C6 13.0706 6.1605 13.3303 6.41459 13.4573L7.91459 14.2073C8.41327 14.4566 9 14.094 9 13.5365V8.61961C9 8.44229 9.06282 8.27071 9.17732 8.13532L13.9562 2.48429Z"
-						stroke="#201A1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-				</svg>
-				Filtr
-			</button>
-		</div>
-		<div class="search-bar">
-			<input @bind-value="@search" type="text" name="" id="search-input" placeholder="Əl işi axtarın" />
-			<button @onclick="UpdateProductsData" type="button" class="btn-search">
-				Axtar <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path
-						d="M8.25 14.25C11.5637 14.25 14.25 11.5637 14.25 8.25C14.25 4.93629 11.5637 2.25 8.25 2.25C4.93629 2.25 2.25 4.93629 2.25 8.25C2.25 11.5637 4.93629 14.25 8.25 14.25Z"
-						stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-					<path d="M15.75 15.7498L12.4875 12.4873" stroke="black" stroke-width="1.5" stroke-linecap="round"
-						stroke-linejoin="round" />
-				</svg>
+    <div class="container">
+        <div class="action-buttons">
+            <button @onclick="OnSortClick" type="button" class="btn-order">
+                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.5 1.5L2 5.25L9.5 9L17 5.25L9.5 1.5Z" stroke="#201A1E" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12.75L9.5 16.5L17 12.75" stroke="#201A1E" stroke-width="1.5" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                    <path d="M2 9L9.5 12.75L17 9" stroke="#201A1E" stroke-width="1.5" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+                @Resources.sort
+            </button>
+            <button @onclick="OnFilterClick" type="button" class="btn-filter">
+                <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M13.9562 2.48429C14.3684 1.99682 14.0219 1.25 13.3835 1.25H1.61648C0.978057 1.25 0.631556 1.99681 1.0438 2.48429L5.82268 8.13532C5.93718 8.27071 6 8.44229 6 8.61961V12.7865C6 13.0706 6.1605 13.3303 6.41459 13.4573L7.91459 14.2073C8.41327 14.4566 9 14.094 9 13.5365V8.61961C9 8.44229 9.06282 8.27071 9.17732 8.13532L13.9562 2.48429Z"
+                        stroke="#201A1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                @Resources.filter
+            </button>
+        </div>
+        <div class="search-bar">
+            <input @bind-value="@search" type="text" name="" id="search-input" placeholder="Əl işi axtarın"/>
+            <button @onclick="UpdateProductsData" type="button" class="btn-search">
+                @Resources.search
+            </button>
+        </div>
+    </div>
+    <form class="filters" id="@(IsFilterHidden ? "hidden" : "")">
+        <input @bind-value="@minimumPrice" type="number" required id="search-input" placeholder=@Resources.minimumPrice
+               min="0">
 
-			</button>
-		</div>
-	</div>
-	<form class="filters" id="@(IsFilterHidden ? "hidden" : "")">
-		<input @bind-value="@minimumPrice" type="number" required id="search-input" placeholder="minimum qiymət"
-			min="0">
+        <input @bind-value="@maximumPrice" type="number" required id="search-input" placeholder=@Resources.maximumPrice
+               min="0">
 
-		<input @bind-value="@maximumPrice" type="number" required id="search-input" placeholder="maksimum qiymət"
-			min="0">
+        <button type="button" @onclick="UpdateProductsData" class="btn-search">@Resources.search</button>
+    </form>
+    <form class="filters" id="@(IsSortHidden ? "hidden" : "")">
+        <button type="button" @onclick="OnAscendingSearchClick" class="sort-button">@Resources.ascendingPriceSort</button>
 
-		<button type="button" @onclick="UpdateProductsData" class="btn-search">Axtar</button>
-	</form>
-	<form class="filters" id="@(IsSortHidden ? "hidden" : "")">
-		<button type="button" @onclick="OnAscendingSearchClick" class="sort-button">Artan sira ile Sırala</button>
-
-		<button type="button" @onclick="OnDescendingSearchClick" class="sort-button">Azalan sira ile Sırala</button>
-	</form>
+        <button type="button" @onclick="OnDescendingSearchClick" class="sort-button">@Resources.descendingPriceSort</button>
+    </form>
 </section>
 
-
-
-
-
-
 <div class="content-container">
-	<section class="artist-overview">
-		<div class="artist-details">
-			<div class="artist-name">@artist.Name</div>
-			<div class="artist-role">@artist.Major</div>
-		</div>
+    @if (isLoading)
+    {
+        <div class="d-flex justify-content-center">
+            <Spinner Type="SpinnerType.Border" Class="m-5 spinner"/>
+        </div>
+    }
+    else
+    {
+        @if (@CultureInfo.CurrentCulture.Name == "az-AZ")
+        {
+            <section class="artist-overview">
+                <div class="artist-details">
+                    <div class="artist-name">@artist.Name</div>
+                    <div class="artist-role">@artist.Major</div>
+                </div>
 
-		<div class="artist-bio">
-			@artist.Description
-		</div>
-	</section>
+                <div class="artist-bio">
+                    @artist.Description
+                </div>
+            </section>
 
-	<!-- ----------------------------------------------- -->
+            <!-- ----------------------------------------------- -->
 
-	<section class="art-gallery">
-		<div class="art-cards">
-			@foreach (var product in products)
-			{
-				<div class="card">
-					<img src="@product.ImageUrl" alt="art-image" />
-					<div class="card-description">
-						<div class="card-name">@product.Name</div>
-						<div class="card-price">
-							<p>@product.Price AZN</p>
-							<a @onclick="@(() => OrderProduct(product, artist))" class="card-get">Əldə et</a>
-						</div>
-					</div>
-				</div>
-			}
-		</div>
-	</section>
+            <section class="art-gallery">
+                <div class="art-cards">
+                    @foreach (var product in artist.Products)
+                    {
+                        <div class="card">
+                            <img src="@product.ImageUrl" alt="art-image"/>
+                            <div class="card-description">
+                                <div class="card-name">@product.Name</div>
+                                <div class="card-price">
+                                    <p>@product.Price AZN</p>
+                                    <a @onclick="@(() => OrderProduct(product, artist))" class="card-get">Əldə et</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+        }
+        else if (@CultureInfo.CurrentCulture.Name == "en-EN")
+        {
+            <section class="artist-overview">
+                <div class="artist-details">
+                    <div class="artist-name">@artist.NameEn</div>
+                    <div class="artist-role">@artist.MajorEn</div>
+                </div>
+
+                <div class="artist-bio">
+                    @artist.DescriptionEn
+                </div>
+            </section>
+
+            <!-- ----------------------------------------------- -->
+
+            <section class="art-gallery">
+                <div class="art-cards">
+                    @foreach (var product in artist.Products)
+                    {
+                        <div class="card">
+                            <img src="@product.ImageUrl" alt="art-image"/>
+                            <div class="card-description">
+                                <div class="card-name">@product.NameEn</div>
+                                <div class="card-price">
+                                    <p>@product.Price AZN</p>
+                                    <a @onclick="@(() => OrderProduct(product, artist))" class="card-get">Order</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+        }
+    }
 </div>
 
 <div class="pagination">
-	<button @onclick="OnPreviousClicked">&laquo;</button>
-	<button>@(page + 1)</button>
-	<button @onclick="OnNextClicked">&raquo;</button>
+    <button @onclick="OnPreviousClicked">&laquo;</button>
+    <button>@(page + 1)</button>
+    <button @onclick="OnNextClicked">&raquo;</button>
 </div>
 
+<Logo></Logo>
+
+<Footer></Footer>
+
 @code {
-	[Parameter]
-	public int Id { get; set; }
+    [Parameter] public int Id { get; set; }
 
-	public Artist artist { get; set; } = new();
+    public Artist artist { get; set; } = new();
 
-	public IEnumerable<Product> products { get; set; } = new List<Product>() { };
+    public int Count { get; set; } = 0;
 
-	public int Count { get; set; } = 0;
+    public string? search = null;
 
-	public string? search = null;
+    public int? minimumPrice = null;
 
-	public int? minimumPrice = null;
+    public int? maximumPrice = null;
 
-	public int? maximumPrice = null;
+    public bool? isSortAscending = null;
 
-	public bool? isSortAscending = null;
+    public int page = 0;
 
-	public int page = 0;
+    public int take = 9;
 
-	public int take = 9;
+    public int skip = 0;
 
-	public int skip = 0;
+    private bool isLoading = true;
 
-	public async Task UpdateProductsData()
-	{
-		artist = await GetArtistByIdAsync(Id);
+    public async Task UpdateProductsData()
+    {
+        isLoading = true;
 
-		products = await GetProductsAsync(Id, skip, take, search, minimumPrice, maximumPrice, isSortAscending);
+        var result = await GetArtistByIdAsync(Id);
 
-		Count = await GetCountAsync(Id, search, minimumPrice, maximumPrice, isSortAscending);
-	}
+        artist = result.Item1;
 
-	protected override async Task OnInitializedAsync()
-	{
-		await UpdateProductsData();
-	}
+        Count = result.Item2;
 
-	public async Task<Artist> GetArtistByIdAsync(int Id)
-	{
-		var httpClient = httpClientFactory.CreateClient("Miras");
+        isLoading = false;
+    }
 
-		var response = await httpClient.GetAsync($"api/Artists/GetById/{Id}");
+    protected override async Task OnParametersSetAsync()
+    {
+        await UpdateProductsData();
+    }
 
-		var content = await response.Content.ReadAsStringAsync();
+    public async Task<Tuple<Artist, int>> GetArtistByIdAsync(int Id)
+    {
+        var httpClient = httpClientFactory.CreateClient("Miras");
 
-		if (!response.IsSuccessStatusCode)
-		{
-			throw new ApplicationException(content);
-		}
+        var response = await httpClient.GetAsync($"api/Artists/GetById?id={Id}&skip={skip}&take={take}&search={search}&minimumPrice={minimumPrice}&maximumPrice={maximumPrice}&isSortAscending={isSortAscending}");
 
-		var result = JsonConvert.DeserializeObject<Artist>(content);
+        var content = await response.Content.ReadAsStringAsync();
 
-		return result;
-	}
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new ApplicationException(content);
+        }
 
-	public async Task<int> GetCountAsync(int? authorId, string? search, int? minimumPrice, int? maximumPrice, bool?
-	isSortAscending)
-	{
-		var httpClient = httpClientFactory.CreateClient("Miras");
+        var result = JsonConvert.DeserializeObject<Tuple<Artist, int>>(content);
 
-		var countResponse = await
-		httpClient.GetAsync($"api/Product/GetProductsCount?authorId={authorId}&skip={skip}&take={take}&search={search}&minimumPrice={minimumPrice}&maximumPrice={maximumPrice}&isSortAscending={isSortAscending}");
+        return result;
+    }
 
-		var countContent = await countResponse.Content.ReadAsStringAsync();
+    public bool IsFilterHidden = true;
+    public bool IsSortHidden = true;
 
-		if (!countResponse.IsSuccessStatusCode)
-		{
-			throw new ApplicationException(countContent);
-		}
+    public void OnFilterClick()
+    {
+        IsFilterHidden = !IsFilterHidden;
+    }
 
-		var count = JsonConvert.DeserializeObject<int>(countContent);
+    public void OnSortClick()
+    {
+        IsSortHidden = !IsSortHidden;
+    }
 
-		return count;
-	}
+    public async Task OnNextClicked()
+    {
+        var times = Count / take;
 
-	public async Task<IEnumerable<Product>> GetProductsAsync(int? authorId, int? skip, int? take, string? search, int?
-	minimumPrice, int? maximumPrice, bool? isSortAscending)
-	{
-		var httpClient = httpClientFactory.CreateClient("Miras");
+        if (times * take < Count)
+        {
+            times += 1;
+        }
 
-		var countResponse = await
-		httpClient.GetAsync($"api/Product/GetByAuthorId?authorId={authorId}&skip={skip}&take={take}&search={search}&minimumPrice={minimumPrice}&maximumPrice={maximumPrice}&isSortAscending={isSortAscending}");
+        if (page + 1 == times)
+        {
+            return;
+        }
 
-		var countContent = await countResponse.Content.ReadAsStringAsync();
+        ++page;
 
-		if (!countResponse.IsSuccessStatusCode)
-		{
-			throw new ApplicationException(countContent);
-		}
+        skip = page * take;
 
-		var products = JsonConvert.DeserializeObject<List<Product>>(countContent);
+        await UpdateProductsData();
+    }
 
-		return products;
-	}
+    public async Task OnPreviousClicked()
+    {
+        if (page == 0)
+        {
+            return;
+        }
 
-	public bool IsFilterHidden = true;
-	public bool IsSortHidden = true;
-	public bool IsSortAscending = true;
-	public bool IsSortDescending = true;
-	public string SortMode { get; set; }
+        --page;
 
-	public void OnFilterClick()
-	{
-		IsFilterHidden = !IsFilterHidden;
-	}
+        skip = page * take;
 
-	public void OnSortClick()
-	{
-		IsSortHidden = !IsSortHidden;
-	}
+        await UpdateProductsData();
+    }
 
-	public async Task OnNextClicked()
-	{
-		var times = Count / take;
+    public async Task OnAscendingSearchClick()
+    {
+        isSortAscending = true;
 
-		if (times * take < Count)
-		{
-			times += 1;
-		}
+        await UpdateProductsData();
+    }
 
-		if (page + 1 == times)
-		{
-			return;
-		}
+    public async Task OnDescendingSearchClick()
+    {
+        isSortAscending = false;
 
-		++page;
+        await UpdateProductsData();
+    }
 
-		skip = page * take;
+    [CascadingParameter] public IModalService Modal { get; set; }
 
-		artist = await GetArtistByIdAsync(Id);
+    public void OrderProduct(Product product, Artist artist)
+    {
+        var parameters = new ModalParameters()
+            .Add("ImageUrl", product.ImageUrl)
+            .Add("ProductName", product.Name)
+            .Add("ProductId", product.Id)
+            .Add("ArtistName", artist.Name)
+            .Add("Price", product.Price);
 
-		products = await GetProductsAsync(Id, skip, take, search, minimumPrice, maximumPrice, isSortAscending);
-	}
+        Modal.Show<OrderForm>("Passing Data", parameters);
+    }
 
-	public async Task OnPreviousClicked()
-	{
-		if (page == 0)
-		{
-			return;
-		}
-
-		--page;
-
-		skip = page * take;
-
-		artist = await GetArtistByIdAsync(Id);
-
-		products = await GetProductsAsync(Id, skip, take, search, minimumPrice, maximumPrice, isSortAscending);
-	}
-
-	public async Task OnAscendingSearchClick()
-	{
-		isSortAscending = true;
-
-		await UpdateProductsData();
-	}
-
-	public async Task OnDescendingSearchClick()
-	{
-		isSortAscending = false;
-
-		await UpdateProductsData();
-	}
-
-	[CascadingParameter]
-	public IModalService Modal { get; set; }
-
-	public void OrderProduct(Product product, Artist artist)
-	{
-		var parameters = new ModalParameters()
-		.Add("ImageUrl", product.ImageUrl)
-		.Add("ProductName", product.Name)
-		.Add("ProductId", product.Id)
-		.Add("ArtistName", artist.Name)
-		.Add("Price", product.Price);
-
-		Modal.Show<OrderForm>("Passing Data", parameters);
-	}
 }

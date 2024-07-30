@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: row;
     border: none;
-    border-radius: 20px !important;
+    border-radius: 1.25rem !important;
     flex-shrink: 0;
+    max-height: 100vh;
 }
 
 .item {
@@ -13,16 +14,16 @@
 
 .info {
     background-color: #f2e9e3;
-    border-top-left-radius: 20px !important;
-    border-bottom-left-radius: 20px !important;
+    border-top-left-radius: 1.25rem !important;
+    border-bottom-left-radius: 1.25rem !important;
     padding-top: 3.75rem;
     padding-left: 2.5rem;
     width: 450px;
 }
 
 img {
-    border-top-right-radius: 20px !important;
-    border-bottom-right-radius: 20px !important;
+    border-top-right-radius: 1.25rem !important;
+    border-bottom-right-radius: 1.25rem !important;
     filter: grayscale(1);
     transition: all 0.5s ease;
     width: 450px;

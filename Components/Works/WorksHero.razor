@@ -1,9 +1,24 @@
+@inject ILocalStorageService LocalStorageService
+
 <div class="hero">
-  <img src="/Images/Works/background-image.png" alt="team photo" />
+    <img src="/Images/Works/background-image.png" alt="team photo"/>
 
-  <div class="slogan">
-    <div class="title">Əl İşləri</div>
+    <div class="slogan">
+        <div class="title">@Resources.worksPage</div>
 
-    <div class="subtitle">Hər bir əl işi bir göz nuru və ümid mənbəyidir.</div>
-  </div>
+        <div class="subtitle">@Resources.homeQuote</div>
+    </div>
 </div>
+
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        var currentCulture = await LocalStorageService.GetItemAsync<string>("currentCulture");
+
+        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
+
+        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
+    }
+
+}

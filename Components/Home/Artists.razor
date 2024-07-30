@@ -1,18 +1,31 @@
 @inject IHttpClientFactory httpClientFactory
+@inject ILocalStorageService LocalStorageService
+@inject NavigationManager NavigationManager
 
 <div class="artists">
-    <h2>Sənətkarlarımızı tanıyaq</h2>
+    <h2>@Resources.artists</h2>
 
     <div class="artists-cards">
         <div class="image-galery slider" style="--count:@Count;
         --half-count:@HalfCount">
             <div class="slide-track">
-                @foreach(var artist in AllArtists)
+                @if (@CultureInfo.CurrentCulture.Name == "az-AZ")
                 {
-                    <ArtistCard Name="@artist.Name" Major="@artist.Major" ImageUrl="@artist.ImageUrl"
-                    Information="@artist.Description" InstagramUrl="@artist.InstagramUrl" FacebookUrl="@artist.FacebookUrl" PhoneNumber="@artist.PhoneNumber"/>
+                    @foreach (var artist in AllArtists)
+                    {
+                        <ArtistCard Name="@artist.Name" Major="@artist.Major" ImageUrl="@artist.ImageUrl"
+                                    Information="@artist.Description" InstagramUrl="@artist.InstagramUrl" FacebookUrl="@artist.FacebookUrl" PhoneNumber="@artist.PhoneNumber"/>
+                    }
                 }
-            </div>
+                else if (@CultureInfo.CurrentCulture.Name == "en-EN")
+                {
+                    @foreach (var artist in AllArtists)
+                    {
+                        <ArtistCard Name="@artist.NameEn" Major="@artist.MajorEn" ImageUrl="@artist.ImageUrl"
+                                    Information="@artist.DescriptionEn" InstagramUrl="@artist.InstagramUrl" FacebookUrl="@artist.FacebookUrl" PhoneNumber="@artist.PhoneNumber"/>
+                    }
+                }
+            </div >
         </div>
     </div>
 </div>
@@ -62,7 +75,9 @@
 
         if (!response.IsSuccessStatusCode)
         {
-            throw new ApplicationException(content);
+            NavigationManager.NavigateTo("/internal-server-error");
+
+            return;
         }
 
         AllArtists = JsonConvert.DeserializeObject<List<Artist>>(content);
@@ -71,4 +86,5 @@
 
         HalfCount = (AllArtists.Count() / 2).ToString();
     }
+
 }
