@@ -14,4 +14,5 @@ public class Artist
     public string? PhoneNumber { get; set; }
     public string? InstagramUrl { get; set; }
     public string? FacebookUrl { get; set; }
+    public ICollection<Product>? Products { get; set; }
 }

@@ -13,8 +13,8 @@
 
 .exhibition img {
     border-radius: 1.25rem;
-    width: 670px;
-    height: 380px;
+    width: 100%;
+    max-height: 380px;
 }
 
 .exhibition {
@@ -154,4 +154,8 @@ input::placeholder {
 
 input {
     padding: 1.25rem 1.875rem !important;
+}
+
+.exhibition p {
+    color: black;
 }

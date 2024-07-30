@@ -1,5 +1,6 @@
 @inject IHttpClientFactory httpClientFactory
 @inject ILocalStorageService LocalStorageService
+@inject NavigationManager NavigationManager
 
 <div class="artists">
     <h2>@Resources.artists</h2>
@@ -8,7 +9,7 @@
         <div class="image-galery slider" style="--count:@Count;
         --half-count:@HalfCount">
             <div class="slide-track">
-                @if (currentCulture == "az-AZ")
+                @if (@CultureInfo.CurrentCulture.Name == "az-AZ")
                 {
                     @foreach (var artist in AllArtists)
                     {
@@ -16,7 +17,7 @@
                                     Information="@artist.Description" InstagramUrl="@artist.InstagramUrl" FacebookUrl="@artist.FacebookUrl" PhoneNumber="@artist.PhoneNumber"/>
                     }
                 }
-                else if (currentCulture == "en-EN")
+                else if (@CultureInfo.CurrentCulture.Name == "en-EN")
                 {
                     @foreach (var artist in AllArtists)
                     {
@@ -62,20 +63,9 @@
     public string? Count { get; set; } = "15";
     public string? HalfCount { get; set; } = "7.5";
 
-    public string currentCulture = string.Empty;
-
     public IEnumerable<Artist> AllArtists { get; set; } = new List<Artist>() { };
 
     protected override async Task OnInitializedAsync()
-    {
-        currentCulture = await LocalStorageService.GetItemAsync<string>("currentCulture");
-
-        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
-
-        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
-    }
-
-    protected override async Task OnParametersSetAsync()
     {
         var httpClient = httpClientFactory.CreateClient("Miras");
 
@@ -85,7 +75,9 @@
 
         if (!response.IsSuccessStatusCode)
         {
-            throw new ApplicationException(content);
+            NavigationManager.NavigateTo("/internal-server-error");
+
+            return;
         }
 
         AllArtists = JsonConvert.DeserializeObject<List<Artist>>(content);

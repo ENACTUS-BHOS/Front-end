@@ -79,7 +79,6 @@ p {
     padding: 0.625rem 1rem 0.625rem 1.25rem;
     gap: 0.625rem;
     border-radius: 1.875rem;
-    opacity: 0;
 }
 
 input::placeholder {

@@ -1,3 +1,4 @@
+@using System.Diagnostics.CodeAnalysis
 @inject ILocalStorageService LocalStorageService 
 
 <div class="hero">
@@ -7,14 +8,3 @@
         <div class="title">@Resources.homeSlogan</div>
     </div>
 </div>
-
-@code {
-    protected override async Task OnInitializedAsync()
-    {
-        var currentCulture = await LocalStorageService.GetItemAsync<string>("currentCulture");
-        
-        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
-        
-        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
-    }
-}

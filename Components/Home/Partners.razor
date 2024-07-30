@@ -16,13 +16,3 @@
     <img src="/Images/bhos-logo.png" alt="BHOS logo"/>
 </div>
 
-@code {
-    protected override async Task OnInitializedAsync()
-    {
-        var currentCulture = await LocalStorageService.GetItemAsync<string>("currentCulture");
-        
-        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
-        
-        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(currentCulture ?? "az-AZ");
-    }
-}

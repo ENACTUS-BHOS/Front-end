@@ -21,11 +21,11 @@
 <div class="section">
     @foreach (var exhibition in AllExhibitions)
     {
-        <div class="exhibition">
+        <a class="exhibition" href="/Exhibitions/@exhibition.Id">
             <img src=@exhibition.ImageUrl/>
             
             <p>@exhibition.Name</p>
-        </div>
+        </a>
     }
 </div>
 

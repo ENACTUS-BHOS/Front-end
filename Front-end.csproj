@@ -35,11 +35,6 @@
     <_ContentIncludedByDefault Remove="Pages\English\Tutorials.razor" />
     <_ContentIncludedByDefault Remove="Pages\English\WorkDetails.razor" />
     <_ContentIncludedByDefault Remove="Pages\English\Works.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AdditionalFiles Include="Pages\Errors\Error404.razor" />
-    <AdditionalFiles Include="Pages\Errors\Error500.razor" />
   </ItemGroup> 
 
 </Project>
