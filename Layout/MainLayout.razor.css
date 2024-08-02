@@ -91,6 +91,10 @@ main {
     }
 }
 
+article {
+    padding: 0 !important;
+}
+
 .lang-menu {
     text-align: right;
     position: relative;

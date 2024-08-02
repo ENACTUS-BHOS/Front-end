@@ -64,8 +64,8 @@ p {
 
 .home-link {
     display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
+    margin-top: 1.2rem;
+    padding: 1rem 2rem;
     font-size: 1.2em;
     text-decoration: none;
     color: #e4d4c8;
@@ -76,7 +76,7 @@ p {
 
 .home-link:hover {
     background-color: #4a3807;
-    transform: translateY(-5px);
+    transform: translateY(-0.4rem);
 }
 
 .background-elements .circle,
@@ -89,16 +89,16 @@ p {
 }
 
 .background-elements .circle {
-    width: 100px;
-    height: 100px;
+    width: 6rem;
+    height: 6rem;
     border-radius: 50%;
     top: 20%;
     left: 10%;
 }
 
 .background-elements .square {
-    width: 100px;
-    height: 100px;
+    width: 6rem;
+    height: 6rem;
     top: 40%;
     left: 80%;
 }

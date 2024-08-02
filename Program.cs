@@ -1,12 +1,9 @@
 using System.Globalization;
-using System.Reflection;
-using System.Resources;
 using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Front_end;
 using Microsoft.JSInterop;
-using System.Globalization;
 using Blazored.Modal;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -14,11 +11,6 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 
 builder.RootComponents.Add<HeadOutlet>("head::after");
-
-builder.Services.AddLocalization(options =>
-{
-    options.ResourcesPath = "/Shared/Resources";
-});
 
 builder.Services.AddBlazoredLocalStorage();
 
@@ -33,6 +25,11 @@ builder.Services.AddHttpClient("Miras", (serviceProvider, client) =>
     var url = builder.Configuration.GetSection("MirasLink").Get<string>();
 
     client.BaseAddress = new Uri(url!);
+});
+
+builder.Services.AddLocalization(options =>
+{
+    options.ResourcesPath = "/Shared/Resources";
 });
 
 var host = builder.Build();
