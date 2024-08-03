@@ -146,4 +146,7 @@
     <data name="notesFieldPlaceholder" xml:space="preserve">
         <value>Please specify if you have any special order notes</value>
     </data>
+    <data name="tutorialsPageSlogan" xml:space="preserve">
+        <value>Everyone is an artist, bring out the artist in you with us!</value>
+    </data>
 </root>

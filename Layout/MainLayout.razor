@@ -1,96 +1,97 @@
 ﻿@using System.Resources
 @inherits LayoutComponentBase
-@inject ILocalStorageService LocalStorageService
 @inject NavigationManager navigationManager
 @inject IJSRuntime JS
 
 <div class="page">
     <main>
-        <div class="top-row px-4">
-            @if (this.navigationManager.BaseUri == this.navigationManager.Uri)
-            {
-                <a class="logo" href="/">
-                    <img src="/Images/logo.png"/>
-                </a>
+        <ErrorBoundary>
+            <ChildContent>
+                <article class="content px-4">
+                    <div class="top-row px-4">
+                        @if (this.navigationManager.BaseUri == this.navigationManager.Uri)
+                        {
+                            <a class="logo" href="/">
+                                <img src="/Images/logo.png"/>
+                            </a>
 
-                <div class="navigation-container">
-                    <a class="navigation-link" href="/">@Resources.homePage</a>
+                            <div class="navigation-container">
+                                <a class="navigation-link" href="/">@Resources.homePage</a>
 
-                    <a class="navigation-link" href="/Works">@Resources.worksPage</a>
+                                <a class="navigation-link" href="/Works">@Resources.worksPage</a>
 
-                    <a class="navigation-link" href="/Tutorials">@Resources.tutorialsPage</a>
+                                <a class="navigation-link" href="/Tutorials">@Resources.tutorialsPage</a>
 
-                    <a class="navigation-link" href="/Exhibitions">@Resources.exhibitionsPage</a>
+                                <a class="navigation-link" href="/Exhibitions">@Resources.exhibitionsPage</a>
 
-                    <a class="navigation-link" href="/AboutUs">@Resources.aboutUsPage</a>
+                                <a class="navigation-link" href="/AboutUs">@Resources.aboutUsPage</a>
 
-                    <div class="lang-menu">
-                        <div class="selected-lang navigation-link">
-                            <img src="/Images/@(currentLanguage).png"/>@currentLanguage
-                        </div>
-                        <ul>
-                            <li @onclick="@(async () => { await SelectLanguageAsync("Eng"); })">
-                                <img src="/Images/Eng.png"/>English
-                            </li>
+                                <div class="lang-menu">
+                                    <div class="selected-lang navigation-link">
+                                        <img src="/Images/@(currentLanguage).png"/>@currentLanguage
+                                    </div>
+                                    <ul>
+                                        <li @onclick="@(async () => { await SelectLanguageAsync("Eng"); })">
+                                            <img src="/Images/Eng.png"/>English
+                                        </li>
 
-                            <li @onclick="@(async () => { await SelectLanguageAsync("Aze"); })">
-                                <img src="/Images/Aze.png"/>Azərbaycan
-                            </li>
-                        </ul>
+                                        <li @onclick="@(async () => { await SelectLanguageAsync("Aze"); })">
+                                            <img src="/Images/Aze.png"/>Azərbaycan
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <a class="logo" href="/">
+                                <img src="/Images/dark-logo.png"/>
+                            </a>
+
+                            <div class="navigation-container">
+                                <a style="color: #60480b" class="navigation-link" href="/">@Resources.homePage</a>
+
+                                <a style="color: #60480b" class="navigation-link" href="/Works">@Resources.worksPage</a>
+
+                                <a style="color: #60480b" class="navigation-link" href="/Tutorials">@Resources.tutorialsPage</a>
+
+                                <a style="color: #60480b" class="navigation-link" href="/Exhibitions">@Resources.exhibitionsPage</a>
+
+                                <a style="color: #60480b" class="navigation-link" href="/AboutUs">@Resources.aboutUsPage</a>
+
+                                <div class="lang-menu">
+                                    <div class="selected-lang dark navigation-link">
+                                        <img src="/Images/@(currentLanguage).png"/>@currentLanguage
+                                    </div>
+                                    <ul>
+                                        <li @onclick="@(async () => { await SelectLanguageAsync("Eng"); })">
+                                            <img src="/Images/Eng.png"/>English
+                                        </li>
+
+                                        <li @onclick="@(async () => { await SelectLanguageAsync("Aze"); })">
+                                            <img src="/Images/Aze.png"/>Azərbaycan
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        }
                     </div>
-                </div>
-            }
-            else
-            {
-                <a class="logo" href="/">
-                    <img src="/Images/dark-logo.png"/>
-                </a>
+                </article>
+                @Body
+            </ChildContent>
+            <ErrorContent>
+                <article class="content px-4">
 
-                <div class="navigation-container">
-                    <a style="color: #60480b" class="navigation-link" href="/">@Resources.homePage</a>
-
-                    <a style="color: #60480b" class="navigation-link" href="/Works">@Resources.worksPage</a>
-
-                    <a style="color: #60480b" class="navigation-link" href="/Tutorials">@Resources.tutorialsPage</a>
-
-                    <a style="color: #60480b" class="navigation-link" href="/Exhibitions">@Resources.exhibitionsPage</a>
-
-                    <a style="color: #60480b" class="navigation-link" href="/AboutUs">@Resources.aboutUsPage</a>
-
-                    <div class="lang-menu">
-                        <div class="selected-lang dark navigation-link">
-                            <img src="/Images/@(currentLanguage).png"/>@currentLanguage
-                        </div>
-                        <ul>
-                            <li @onclick="@(async () => { await SelectLanguageAsync("Eng"); })">
-                                <img src="/Images/Eng.png"/>English
-                            </li>
-
-                            <li @onclick="@(async () => { await SelectLanguageAsync("Aze"); })">
-                                <img src="/Images/Aze.png"/>Azərbaycan
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            }
-        </div>
-
-        <article class="content px-4">
-            <ErrorBoundary>
-                <ChildContent>
-                    @Body
-                </ChildContent>
-                <ErrorContent>
                     <ServerError></ServerError>
-                </ErrorContent>
-            </ErrorBoundary>
-        </article>
+                </article>
+            </ErrorContent>
+        </ErrorBoundary>
     </main>
 </div>
 
 @code {
     private string currentLanguage = "Aze";
-    
+
     private CultureInfo[] supportedCultures = new[]
     {
         new CultureInfo("az-AZ"),
@@ -98,11 +99,11 @@
     };
 
     private CultureInfo? selectedCulture;
-    
+
     protected override async Task OnInitializedAsync()
     {
         selectedCulture = CultureInfo.CurrentCulture;
-
+        
         currentLanguage = selectedCulture.Name == "az-AZ" ? "Aze" : "Eng";
     }
 
@@ -114,7 +115,6 @@
 
         selectedCulture = CultureInfo.GetCultureInfo(culture);
         
-
         if (true)
         {
             await JS.InvokeVoidAsync("blazorCulture.set", selectedCulture!.Name);
@@ -122,4 +122,5 @@
             navigationManager.NavigateTo(navigationManager.Uri, forceLoad: true);
         }
     }
+
 }

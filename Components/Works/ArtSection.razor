@@ -1,5 +1,4 @@
 @inject IHttpClientFactory httpClientFactory
-@inject ILocalStorageService LocalStorageService
 
 @using BlazorBootstrap
 
@@ -214,7 +213,7 @@
 		isLoading = false;
 	}
 
-	protected override async Task OnParametersSetAsync()
+	protected override async Task OnInitializedAsync()
 	{
 		await UpdateProductsData();
 	}

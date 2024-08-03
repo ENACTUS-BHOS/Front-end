@@ -37,7 +37,7 @@
         <value>Məhdudiyyətləri aşaraq Mirasımızı yaşadaq!</value>
     </data>
     <data name="mission" xml:space="preserve">
-        <value>Misiyamız</value>
+        <value>Missiyamız</value>
     </data>
     <data name="missionSloganPart1" xml:space="preserve">
         <value>Fiziki məhdudiyyətli insanların əl işlərini tanıdaraq</value>
@@ -46,7 +46,7 @@
         <value>onlara dəstək oluruq.</value>
     </data>
     <data name="missionSloganPart3" xml:space="preserve">
-        <value>Onlar bizim Mirsasımızdır!</value>
+        <value>Onlar bizim Mirasımızdır!</value>
     </data>
     <data name="artists" xml:space="preserve">
         <value>Sənətkarlarımızı tanıyaq</value>
@@ -152,5 +152,8 @@
     </data>
     <data name="notesFieldPlaceholder" xml:space="preserve">
         <value>Sifarişlə bağlı xüsusi qeydiniz varsa qeyd edin</value>
+    </data>
+    <data name="tutorialsPageSlogan" xml:space="preserve">
+        <value>Hər kəs bir sənətkardır, içinizdəki sənətkarı bizimlə ortaya çıxarın!</value>
     </data>
 </root>

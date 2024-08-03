@@ -314,5 +314,11 @@ namespace Front_end.Shared.Resources {
                 return ResourceManager.GetString("notesFieldPlaceholder", resourceCulture);
             }
         }
+        
+        public static string tutorialsPageSlogan {
+            get {
+                return ResourceManager.GetString("tutorialsPageSlogan", resourceCulture);
+            }
+        }
     }
 }
