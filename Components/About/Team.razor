@@ -1,16 +1,27 @@
 @inject IHttpClientFactory httpClientFactory
 
 <div class="artists">
-    <h2>Komandamız</h2>
+    <h2>@Resources.ourTeam</h2>
 
     <div class="artists-cards">
         <div class="image-galery slider" style="--count:@Count;
         --half-count:@HalfCount">
             <div class="slide-track">
-                @foreach(var member in members)
+                @if (CultureInfo.CurrentCulture.Name == "az-AZ")
                 {
-                    <ArtistCard Name="@member.Name" Major="@member.Role" ImageUrl="@member.ImageUrl"
-                    Information="@member.Bio" />
+                    @foreach (var member in members)
+                    {
+                        <ArtistCard Name="@member.Name" Major="@member.Role" ImageUrl="@member.ImageUrl"
+                                    Information="@member.Bio" />
+                    }
+                }
+                else if (CultureInfo.CurrentCulture.Name == "en-EN")
+                {
+                    @foreach (var member in members)
+                    {
+                        <ArtistCard Name="@member.NameEn" Major="@member.RoleEn" ImageUrl="@member.ImageUrl"
+                                    Information="@member.BioEn" />
+                    }
                 }
             </div>
         </div>

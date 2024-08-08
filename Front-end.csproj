@@ -35,6 +35,11 @@
     <_ContentIncludedByDefault Remove="Pages\English\Tutorials.razor" />
     <_ContentIncludedByDefault Remove="Pages\English\WorkDetails.razor" />
     <_ContentIncludedByDefault Remove="Pages\English\Works.razor" />
+    <_ContentIncludedByDefault Remove="wwwroot\Images\Artists\ArifHajiyev.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Images\Artists\image-6.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Images\Artists\image-7.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Images\Artists\image-8.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\Images\Artists\image-9.png" />
   </ItemGroup> 
 
 </Project>

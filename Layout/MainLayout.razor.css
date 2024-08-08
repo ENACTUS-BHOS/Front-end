@@ -26,12 +26,14 @@ main {
     color: white;
 }
 
+.logo img {
+    width: 14rem;
+    object-fit: contain;
+}
+
 .logo {
-    font-family: 'EB Garamond';
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 3.915rem;
-    margin-left: 2.5rem !important;
+    z-index: 99999;
+    width: 15rem;
 }
 
 .navigation-link {
@@ -56,22 +58,20 @@ main {
         justify-content: space-between;
     }
 
-    .top-row ::deep a,
-    .top-row ::deep .btn-link {
-        margin-left: 0;
+    .top-row {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+
+    article {
+        padding: 0 !important;
     }
 }
 
 @media (min-width: 641px) {
     .page {
         flex-direction: row;
-    }
-
-    .sidebar {
-        width: 23.125rem;
-        height: 100vh;
-        position: sticky;
-        top: 0;
     }
 
     .top-row {
@@ -103,7 +103,7 @@ article {
 }
 
 .lang-menu .selected-lang {
-    display: flex;   
+    display: flex;
     justify-content: space-between;
     line-height: 1.465rem;
     color: white;
@@ -118,9 +118,8 @@ article {
     border: 1px solid #f8f8f8;
     position: absolute;
     border-radius: 5px;
-    box-shadow: 0px 1px 0.625rem rgba(0,0,0,0.2);
+    box-shadow: 0px 1px 0.625rem rgba(0, 0, 0, 0.2);
 }
-
 
 .lang-menu ul li {
     list-style: none;
@@ -148,4 +147,135 @@ article {
 .lang-menu img {
     width: 1.4rem;
     margin-right: 0.4rem;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+label {
+    display: none;
+    float: right;
+}
+
+@media only screen and (max-width: 640.98px) {
+    .lang-menu .selected-lang {
+        justify-content: left;
+        color: #474644;
+        font-size: 2.2rem;
+        line-height: 2.4rem;
+        margin-bottom: 3rem;
+    }
+
+    .logo {
+        position: absolute;
+        left: 2rem;
+        transition-delay: 1s;
+    }
+
+    .top-row {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .hamburger-menu {
+        --x-width: calc(4px * 3 + 6px * 2 * 1.41421356237);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .hamburger-menu:has(input:checked)::before,
+    .hamburger-menu:has(input:checked)::after {
+        background-color: #474644;
+    }
+
+    .hamburger-menu::before,
+    .hamburger-menu::after,
+    .hamburger-menu input {
+        content: "";
+        width: 30px;
+        height: 2.5px;
+        background-color: white;
+        border-radius: 9999px;
+        transform-origin: left center;
+        transition: opacity 200ms ease-in-out, width 200ms ease-in-out,
+        rotate 200ms ease-in-out, translate 200ms ease-in-out,
+        background-color 200ms ease-in-out;
+    }
+
+    .hamburger-menu-dark::before,
+    .hamburger-menu-dark::after,
+    .hamburger-menu-dark input {
+        content: "";
+        width: 30px;
+        height: 2.5px;
+        background-color: #60480b;
+        border-radius: 9999px;
+        transform-origin: left center;
+        transition: opacity 200ms ease-in-out, width 200ms ease-in-out,
+        rotate 200ms ease-in-out, translate 200ms ease-in-out,
+        background-color 200ms ease-in-out;
+    }
+
+    .hamburger-menu input {
+        appearance: none;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        pointer-events: none;
+    }
+
+    .hamburger-menu:has(input:checked)::before {
+        rotate: 45deg;
+        width: calc(2.5px * 3 + 6px * 2 * 1.41421356237);
+        translate: 0 calc(0.375px / -2);
+    }
+
+    .hamburger-menu:has(input:checked)::after {
+        rotate: -45deg;
+        width: calc(2.5px * 3 + 6px * 2 * 1.41421356237);
+        translate: 0 calc(0.375px / 2);
+    }
+
+    .hamburger-menu input:checked {
+        opacity: 0;
+        width: 0;
+    }
+
+    .navigation-container {
+        transition: translate 200ms ease-in-out;
+        translate: 0 -100%;
+        padding: 0.5rem 1rem;
+        padding-top: 35rem;
+        background-color: #f2e9e3;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navigation-container > a {
+        color: #474644;
+        font-size: 2.2rem;
+        line-height: 2.4rem;
+        margin-bottom: 3rem;
+    }
+
+    label:has(input:checked) {
+        color: #474644;
+    }
+
+    .hamburger-menu:has(input:checked) ~ .navigation-container {
+        translate: 0;
+    }
+
+    .hamburger-menu:has(input:checked) ~ .logo {
+        display: none;
+    }
 }

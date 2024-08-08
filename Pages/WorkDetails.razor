@@ -39,7 +39,7 @@
             </button>
         </div>
         <div class="search-bar">
-            <input @bind-value="@search" type="text" name="" id="search-input" placeholder="Əl işi axtarın"/>
+            <input @bind-value="@search" type="text" name="" id="search-input" placeholder="@Resources.worksDetalisSearchPlaceholder"/>
             <button @onclick="UpdateProductsData" type="button" class="btn-search">
                 @Resources.search
             </button>
@@ -185,7 +185,7 @@
         isLoading = false;
     }
 
-    protected override async Task OnParametersSetAsync()
+    protected override async Task OnInitializedAsync()
     {
         await UpdateProductsData();
     }
