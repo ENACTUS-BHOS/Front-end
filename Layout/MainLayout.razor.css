@@ -32,7 +32,7 @@ main {
 }
 
 .logo {
-    z-index: 99999;
+    z-index: 9999;
     width: 15rem;
 }
 
@@ -188,7 +188,7 @@ label {
         position: absolute;
         top: 8px;
         right: 8px;
-        z-index: 2;
+        z-index: 999999;
         cursor: pointer;
     }
 
@@ -258,6 +258,7 @@ label {
         background-color: #f2e9e3;
         width: 100%;
         flex-direction: column;
+        z-index: 99999;
     }
 
     .navigation-container > a {
@@ -273,9 +274,5 @@ label {
 
     .hamburger-menu:has(input:checked) ~ .navigation-container {
         translate: 0;
-    }
-
-    .hamburger-menu:has(input:checked) ~ .logo {
-        display: none;
     }
 }
