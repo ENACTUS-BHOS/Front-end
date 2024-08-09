@@ -149,4 +149,67 @@
     <data name="tutorialsPageSlogan" xml:space="preserve">
         <value>Everyone is an artist, bring out the artist in you with us!</value>
     </data>
+    <data name="worksDetalisSearchPlaceholder" xml:space="preserve">
+        <value>Search handiworks</value>
+    </data>
+    <data name="aboutUsPageSlogan" xml:space="preserve">
+        <value>Get to know our "Legacy" team!</value>
+    </data>
+    <data name="ourGoal" xml:space="preserve">
+        <value>Our goal</value>
+    </data>
+    <data name="mainGoal" xml:space="preserve">
+        <value>The purpose of the "Legacy" project is to promote the creativity and handicrafts of people with physical disabilities, while supporting their talents, as well as ensuring their economic independence and promoting the diversity and equality of society. People with physical disabilities who are engaged in arts and crafts are the heritage of our society as well as keeping the arts alive, which is our historical heritage.</value>
+    </data>
+    <data name="howToReachTheGoal" xml:space="preserve">
+        <value>Our mission is to support and encourage the people inherited from us by going beyond the limitations we set for ourselves. We have chosen as our mission to support and inspire people with physical disabilities to overcome their limitations by promoting their handicrafts.</value>
+    </data>
+    <data name="values" xml:space="preserve">
+        <value>Our values</value>
+    </data>
+    <data name="inclusivity" xml:space="preserve">
+        <value>Inclusivity</value>
+    </data>
+    <data name="inclusivityDescription" xml:space="preserve">
+        <value>Our "Legacy" platform is open and accessible to everyone, regardless of skill or physical limitations.</value>
+    </data>
+    <data name="solidarity" xml:space="preserve">
+        <value>Solidarity</value>
+    </data>
+    <data name="solidarityDescription" xml:space="preserve">
+        <value>We promote equality and solidarity between people with physical disabilities and society.</value>
+    </data>
+    <data name="support" xml:space="preserve">
+        <value>Support</value>
+    </data>
+    <data name="supportDescription" xml:space="preserve">
+        <value>We are dedicated to helping people with physical disabilities achieve economic and social independence.</value>
+    </data>
+    <data name="trust" xml:space="preserve">
+        <value>Trust</value>
+    </data>
+    <data name="trustDecription" xml:space="preserve">
+        <value>Trust is a fundamental principle in our relationships with heritage project vendors and also with our customers.</value>
+    </data>
+    <data name="transparency" xml:space="preserve">
+        <value>Transparency</value>
+    </data>
+    <data name="transparencyDecription" xml:space="preserve">
+        <value>We provide transparency and accountability in our activities.</value>
+    </data>
+    <data name="responsibility" xml:space="preserve">
+        <value>Responsibility</value>
+    </data>
+    <data name="responsibilityDescription" xml:space="preserve">
+        <value>We are responsible for the people and society around us.</value>
+    </data>
+    <data name="ourStory" xml:space="preserve">
+        <value>Our story</value>
+    </data>
+    <data name="story" xml:space="preserve">
+        <value>"Legacy" project is a social project implemented by "Enactus" team of Baku Higher Oil School within the framework of social responsibility. One of the fundamental values ​​of the Baku Higher Oil School is to serve the citizens of the Republic of Azerbaijan and educate bright students for our bright future. Just as our students are always instilled with responsibility towards the vulnerable members of society, our students have set themselves the main goal of encouraging each member of our society to be more sensitive and responsible towards people with physical disabilities.</value>
+    </data>
+    <data name="ourTeam" xml:space="preserve">
+        <value>Our team</value>
+    </data>
 </root>

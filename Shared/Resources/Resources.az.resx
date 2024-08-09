@@ -149,4 +149,69 @@
     <data name="tutorialsPageSlogan" xml:space="preserve">
         <value>Hər kəs bir sənətkardır, içinizdəki sənətkarı bizimlə ortaya çıxarın!</value>
     </data>
+    <data name="worksDetalisSearchPlaceholder" xml:space="preserve">
+        <value>Əl işi axtarın</value>
+    </data>
+    <data name="aboutUsPageSlogan" xml:space="preserve">
+        <value>“Miras” komandamızla daha yaxından tanış olun!</value>
+    </data>
+    <data name="ourGoal" xml:space="preserve">
+        <value>Məqsədimiz</value>
+    </data>
+    <data name="mainGoal" xml:space="preserve">
+        <value>"Miras" layihəsinin məqsədi fiziki məhdudiyyətli insanların yaradıcılıqlarını və hazırladıqları əl işlərini tanıdaraq onların istedadlarını dəstəkləməklə yanaşı iqtisadi müstəqilliklərini təmin etmək və cəmiyyətin müxtəlifliyini və bərabərliyini təşviq etməkdir.Sənətkarlıqla məşğul olan fiziki məhdudiyyətli insanlar tarixi mirasımız olan sənətkarlığı yaşatmaqla bərabər cəmiyyətin bizə mirasıdır.</value>
+    </data>
+    <data name="howToReachTheGoal" xml:space="preserve">
+        <value>Missiyamız qarşımıza qoyduğumuz məhdudiyyətləri aşaraq bizə miras edilən insanları dəstəkləmək və həvəsləndirməkdir. Fiziki məhdudiyyətli insanların əl işlərini tanıdaraq onlara dəstək olmağı və məhdudiyyətləri aşmağa ruhlandırmağı özümüzə missiya olaraq seçmişik.</value>
+    </data>
+    <data name="values" xml:space="preserve">
+        <value>Dəyərlərimiz</value>
+    </data>
+    <data name="inclusivity" xml:space="preserve">
+        <value>İnklüzivlik</value>
+    </data>
+    <data name="inclusivityDescription" xml:space="preserve">
+        <value>“Miras” platformamız bacarıq və fiziki məhdudiyyətindən asılı olmayaraq hər kəs üçün açıq və əlçatandır.</value>
+    </data>
+    <data name="solidarity" xml:space="preserve">
+        <value>Həmrəylik</value>
+    </data>
+    <data name="solidarityDescription" xml:space="preserve">
+        <value>Fiziki məhdudiyyətli insanlarla cəmiyyət arasında bərabərlik və həmrəyliyi təşviq edirik.</value>
+    </data>
+    <data name="support" xml:space="preserve">
+        <value>Dəstək</value>
+    </data>
+    <data name="supportDescription" xml:space="preserve">
+        <value>Fiziki məhdudiyyətli insanlara iqtisadi və sosial cəhətdən müstəqillik əldə etməkdə kömək etməyə özümüzü həsr edirik.</value>
+    </data>
+    <data name="trust" xml:space="preserve">
+        <value>Güvən</value>
+    </data>
+    <data name="trustDecription" xml:space="preserve">
+        <value>Miras layihəsində olan satıcılarla və həm də müştərilərimizlə olan münasibətlərimizdə güvən təməl bir prinsipdir.</value>
+    </data>
+    <data name="transparency" xml:space="preserve">
+        <value>Şəffaflıq</value>
+    </data>
+    <data name="transparencyDecription" xml:space="preserve">
+        <value>Fəaliyyətlərimizdə şəffaflıq və cavabdehlik təmin edirik.</value>
+    </data>
+    <data name="responsibility" xml:space="preserve">
+        <value>Məsuliyyət</value>
+    </data>
+    <data name="responsibilityDescription" xml:space="preserve">
+        <value>Özümüzü əhatə etdiyimiz insanlara və cəmiyyətə qarşı məsuliyyət daşıyırıq.</value>
+    </data>
+    <data name="ourStory" xml:space="preserve">
+        <value>Hekayəmiz</value>
+    </data>
+    <data name="story" xml:space="preserve">
+        <value>"Miras" layihəsi Bakı Ali Neft Məktəbinin "Enactus" komandasının sosial məsuliyyət çərçivəsində həyata keçirdikləri bir sosial layihədir. Bakı Ali Neft Məktəbinin təməl dəyərlərindən biri Azərbaycan Respublikasının vətəndaşlarına xidmət edərək parlaq gələcəyimiz üçün parlaq tələbələr yetişdirməkdir. Tələbələrimizə hər zaman cəmiyyətin həssas üzvlərinə qarşı məsuliyyət aşılandığı kimi tələbələrimiz də cəmiyyətimizin hər bir üzvünün fiziki məhdudiyyətli şəxslərə qarşı daha həssas və məsuliyyətli olmasını təşviq etməyi qarşılarına əsas məqsəd olaraq qoyublar.
+
+</value>
+    </data>
+    <data name="ourTeam" xml:space="preserve">
+        <value>Komandamız</value>
+    </data>
 </root>

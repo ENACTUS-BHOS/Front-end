@@ -23,9 +23,18 @@
         </video>
         
         <div class="information">
-            <div class="title">@Exhibition.Name</div>
+            @if (@CultureInfo.CurrentCulture.Name == "az-AZ")
+            {
+                <div class="title">@Exhibition.Name</div>
             
-            <div class="description">@Exhibition.Description</div>
+                <div class="description">@Exhibition.Description</div>
+            }
+            else if (@CultureInfo.CurrentCulture.Name == "en-EN")
+            {
+                <div class="title">@Exhibition.NameEn</div>
+            
+                <div class="description">@Exhibition.DescriptionEn</div>
+            }
         </div>
     </div>
     
@@ -46,11 +55,10 @@
 <Footer></Footer>
 
 @code {
-    [Parameter] public int Id { get; set; }
+    [Parameter]
+    public int Id { get; set; }
 
-    public Exhibition Exhibition { get; set; } = new();
-    
-    private string currentCulture = String.Empty;
+    private Exhibition Exhibition { get; set; } = new();
     
     private bool isLoading = true;
 
@@ -63,14 +71,12 @@
         isLoading = false;
     }
     
-    
-    
-    protected override async Task OnParametersSetAsync()
+    protected override async Task OnInitializedAsync()
     {
         await UpdateExhibitionData();
     }
     
-    public async Task<Exhibition> GetExhibitionById(int Id)
+    private async Task<Exhibition> GetExhibitionById(int Id)
     {
         var httpClient = httpClientFactory.CreateClient("Miras");
 

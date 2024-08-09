@@ -320,5 +320,131 @@ namespace Front_end.Shared.Resources {
                 return ResourceManager.GetString("tutorialsPageSlogan", resourceCulture);
             }
         }
+        
+        public static string worksDetalisSearchPlaceholder {
+            get {
+                return ResourceManager.GetString("worksDetalisSearchPlaceholder", resourceCulture);
+            }
+        }
+        
+        public static string aboutUsPageSlogan {
+            get {
+                return ResourceManager.GetString("aboutUsPageSlogan", resourceCulture);
+            }
+        }
+        
+        public static string ourGoal {
+            get {
+                return ResourceManager.GetString("ourGoal", resourceCulture);
+            }
+        }
+        
+        public static string mainGoal {
+            get {
+                return ResourceManager.GetString("mainGoal", resourceCulture);
+            }
+        }
+        
+        public static string howToReachTheGoal {
+            get {
+                return ResourceManager.GetString("howToReachTheGoal", resourceCulture);
+            }
+        }
+        
+        public static string values {
+            get {
+                return ResourceManager.GetString("values", resourceCulture);
+            }
+        }
+        
+        public static string inclusivity {
+            get {
+                return ResourceManager.GetString("inclusivity", resourceCulture);
+            }
+        }
+        
+        public static string inclusivityDescription {
+            get {
+                return ResourceManager.GetString("inclusivityDescription", resourceCulture);
+            }
+        }
+        
+        public static string solidarity {
+            get {
+                return ResourceManager.GetString("solidarity", resourceCulture);
+            }
+        }
+        
+        public static string solidarityDescription {
+            get {
+                return ResourceManager.GetString("solidarityDescription", resourceCulture);
+            }
+        }
+        
+        public static string support {
+            get {
+                return ResourceManager.GetString("support", resourceCulture);
+            }
+        }
+        
+        public static string supportDescription {
+            get {
+                return ResourceManager.GetString("supportDescription", resourceCulture);
+            }
+        }
+        
+        public static string trust {
+            get {
+                return ResourceManager.GetString("trust", resourceCulture);
+            }
+        }
+        
+        public static string trustDecription {
+            get {
+                return ResourceManager.GetString("trustDecription", resourceCulture);
+            }
+        }
+        
+        public static string transparency {
+            get {
+                return ResourceManager.GetString("transparency", resourceCulture);
+            }
+        }
+        
+        public static string transparencyDecription {
+            get {
+                return ResourceManager.GetString("transparencyDecription", resourceCulture);
+            }
+        }
+        
+        public static string responsibility {
+            get {
+                return ResourceManager.GetString("responsibility", resourceCulture);
+            }
+        }
+        
+        public static string responsibilityDescription {
+            get {
+                return ResourceManager.GetString("responsibilityDescription", resourceCulture);
+            }
+        }
+        
+        public static string ourStory {
+            get {
+                return ResourceManager.GetString("ourStory", resourceCulture);
+            }
+        }
+        
+        public static string story {
+            get {
+                return ResourceManager.GetString("story", resourceCulture);
+            }
+        }
+        
+        public static string ourTeam {
+            get {
+                return ResourceManager.GetString("ourTeam", resourceCulture);
+            }
+        }
     }
 }
