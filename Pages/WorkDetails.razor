@@ -176,11 +176,7 @@
     {
         isLoading = true;
 
-        var result = await GetArtistByIdAsync(Id);
-
-        artist = result.Item1;
-
-        Count = result.Item2;
+        artist = await GetArtistByIdAsync(Id);
 
         isLoading = false;
     }
@@ -188,9 +184,11 @@
     protected override async Task OnInitializedAsync()
     {
         await UpdateProductsData();
+
+        Count = await GetCountASync();
     }
 
-    public async Task<Tuple<Artist, int>> GetArtistByIdAsync(int Id)
+    public async Task<Artist> GetArtistByIdAsync(int Id)
     {
         var httpClient = httpClientFactory.CreateClient("Miras");
 
@@ -203,7 +201,25 @@
             throw new ApplicationException(content);
         }
 
-        var result = JsonConvert.DeserializeObject<Tuple<Artist, int>>(content);
+        var result = JsonConvert.DeserializeObject<Artist>(content);
+
+        return result;
+    }
+
+    public async Task<int> GetCountASync()
+    {
+        var httpClient = httpClientFactory.CreateClient("Miras");
+
+        var response = await httpClient.GetAsync($"api/Artists/GetCount?id={Id}&search={search}&minimumPrice={minimumPrice}&maximumPrice={maximumPrice}");
+
+        var content = await response.Content.ReadAsStringAsync();
+
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new ApplicationException(content);
+        }
+
+        var result = JsonConvert.DeserializeObject<int>(content);
 
         return result;
     }
@@ -274,11 +290,15 @@
 
     public void OrderProduct(Product product, Artist artist)
     {
+        var productName = CultureInfo.CurrentCulture.Name == "az-AZ" ? product.Name : product.NameEn;
+		
+        var artistName = CultureInfo.CurrentCulture.Name == "az-AZ" ? artist.Name : artist.NameEn;
+		
         var parameters = new ModalParameters()
             .Add("ImageUrl", product.ImageUrl)
-            .Add("ProductName", product.Name)
+            .Add("ProductName", productName)
             .Add("ProductId", product.Id)
-            .Add("ArtistName", artist.Name)
+            .Add("ArtistName", artistName)
             .Add("Price", product.Price);
 
         Modal.Show<OrderForm>("Passing Data", parameters);
