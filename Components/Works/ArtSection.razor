@@ -206,9 +206,9 @@
 
 		var result = await GetArtistsAndCountAsync(skip, take, takeProducts, search, minimumPrice, maximumPrice, isSortAscending);
 
-		artists = result.Item1;
+		artists = result.Artists;
 
-		Count = result.Item2;
+		Count = result.Count;
 		
 		isLoading = false;
 	}
@@ -218,7 +218,7 @@
 		await UpdateProductsData();
 	}
 	
-	private async Task<Tuple<IEnumerable<Artist>, int>> GetArtistsAndCountAsync(int skip, int take, int takeProducts, string? search, int? minimumPrice, int?
+	private async Task<ProductsCount> GetArtistsAndCountAsync(int skip, int take, int takeProducts, string? search, int? minimumPrice, int?
 	maximumPrice, bool?
 	isSortAscending)
 	{
@@ -234,7 +234,7 @@
 			throw new ApplicationException(content);
 		}
 
-		var result = JsonConvert.DeserializeObject<Tuple<IEnumerable<Artist>, int>>(content);
+		var result = JsonConvert.DeserializeObject<ProductsCount>(content);
 
 		return result;
 	}
