@@ -184,9 +184,8 @@ label {
         --x-width: calc(4px * 3 + 6px * 2 * 1.41421356237);
         display: flex;
         flex-direction: column;
-        gap: 6px;
+        gap: 1rem;
         position: absolute;
-        top: 8px;
         right: 8px;
         z-index: 999999;
         cursor: pointer;
@@ -236,13 +235,13 @@ label {
     .hamburger-menu:has(input:checked)::before {
         rotate: 45deg;
         width: calc(2.5px * 3 + 6px * 2 * 1.41421356237);
-        translate: 0 calc(0.375px / -2);
+        translate: 0 calc(1.5rem / -2);
     }
 
     .hamburger-menu:has(input:checked)::after {
         rotate: -45deg;
         width: calc(2.5px * 3 + 6px * 2 * 1.41421356237);
-        translate: 0 calc(0.375px / 2);
+        translate: 0 calc(1.5rem / 2);
     }
 
     .hamburger-menu input:checked {

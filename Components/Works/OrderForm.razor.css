@@ -6,7 +6,7 @@
   }
   /*container*/
   .order-container {
-    width: 630px;
+    width: 40rem;
     border-radius: 1.25rem;
     padding-left: 3.75rem;
     padding-right: 2.625rem;
@@ -17,22 +17,23 @@
   /*first section, image, product name, artist name and art price*/
   .product-info {
     display: grid;
-    grid-template-columns: 226px 264px;
+    grid-template-columns: 14.125rem 16.5rem;
     column-gap: 2.5rem;
   }
   
   .product-image img {
     width: 100%;
   }
+  
   .product-details {
     align-content: center;
   }
   
   .product-name {
     font-family: EB Garamond;
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 600;
-    line-height: 36px;
+    line-height: 2.25rem;
     text-align: left;
     color: #201a1e;
   }
@@ -45,7 +46,7 @@
   }
   .product-price {
     font-family: DM Sans;
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 700;
     line-height: 2.93rem;
     text-align: left;
@@ -62,6 +63,7 @@
     text-align: left;
     color: #201a1e;
   }
+  
   .description {
     font-family: DM Sans;
     font-size: 1.125rem;
@@ -70,31 +72,33 @@
     letter-spacing: 0.04em;
     text-align: left;
     color: #201a1e;
-    margin-top: 15px;
+    margin-top: 1rem;
   }
   
   /*form elemets*/
   form {
     margin-top: 2.5rem;
   }
+  
   form label {
     font-family: EB Garamond;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 600;
-    line-height: 41.76px;
+    line-height: 2.625rem;
     text-align: left;
     color: #201a1e;
     display: block;
     margin-top: 1.25rem;
-    margin-bottom: 08px;
+    margin-bottom: 0.5rem;
   }
+  
   form input {
-    width: 510px;
-    height: 47px;
+    width: 31.875rem;
+    height: 2.9375rem;
     border-radius: 6px;
     border: none;
     padding-left: 1.25rem;
-    padding-top: 08px;
+    padding-top: 0.5rem;
     display: block;
   }
   
@@ -102,7 +106,7 @@
     font-family: Inter;
     font-size: 1rem;
     font-weight: 400;
-    line-height: 19.36px;
+    line-height: 1.25rem;
     text-align: left;
   }
   
@@ -116,7 +120,7 @@
     color: #201a1e;
     background-color: white;
     font-size: 1.3125rem;
-    margin-top: 54px;
-    margin-left: 306px;
+    margin-top: 3.375rem;
+    margin-left: 19.125rem;
   }
   

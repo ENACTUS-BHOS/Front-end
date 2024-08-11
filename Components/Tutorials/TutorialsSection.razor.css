@@ -208,3 +208,7 @@ input {
     width: 9.6875rem;
     margin-right: 0.625rem;
 }
+
+.container {
+    max-width: 100% !important;
+}

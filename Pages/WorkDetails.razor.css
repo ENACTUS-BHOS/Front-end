@@ -4,6 +4,10 @@
     --black-modified: #201a1e;
 }
 
+svg {
+    width: 1.125rem;
+}
+
 a:hover {
     cursor: pointer;
 }
@@ -337,4 +341,8 @@ button {
 .pagination button:last-child {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+.container {
+    max-width: 100% !important;
 }
