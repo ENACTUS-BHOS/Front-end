@@ -17,11 +17,10 @@
 
 <section class="exhibition-section">
     <div class="overview">
-        <video controls
-               preload="auto">
-            <source src="@Exhibition.VideoUrl" type='video/mp4'>
-        </video>
-        
+        <iframe width=670 height=380 scrolling="no" src="@Exhibition.VideoUrl" title="@Exhibition.Name" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture; web-share"
+                allowfullscreen ></iframe>
+
         <div class="information">
             @if (@CultureInfo.CurrentCulture.Name == "az-AZ")
             {

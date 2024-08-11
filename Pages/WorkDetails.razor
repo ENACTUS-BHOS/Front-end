@@ -19,7 +19,7 @@
     <div class="container">
         <div class="action-buttons">
             <button @onclick="OnSortClick" type="button" class="btn-order">
-                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg  viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9.5 1.5L2 5.25L9.5 9L17 5.25L9.5 1.5Z" stroke="#201A1E" stroke-width="1.5"
                           stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M2 12.75L9.5 16.5L17 12.75" stroke="#201A1E" stroke-width="1.5" stroke-linecap="round"
@@ -30,7 +30,7 @@
                 @Resources.sort
             </button>
             <button @onclick="OnFilterClick" type="button" class="btn-filter">
-                <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg  viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M13.9562 2.48429C14.3684 1.99682 14.0219 1.25 13.3835 1.25H1.61648C0.978057 1.25 0.631556 1.99681 1.0438 2.48429L5.82268 8.13532C5.93718 8.27071 6 8.44229 6 8.61961V12.7865C6 13.0706 6.1605 13.3303 6.41459 13.4573L7.91459 14.2073C8.41327 14.4566 9 14.094 9 13.5365V8.61961C9 8.44229 9.06282 8.27071 9.17732 8.13532L13.9562 2.48429Z"
                         stroke="#201A1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -42,6 +42,12 @@
             <input @bind-value="@search" type="text" name="" id="search-input" placeholder="@Resources.worksDetalisSearchPlaceholder"/>
             <button @onclick="UpdateProductsData" type="button" class="btn-search">
                 @Resources.search
+                <svg  viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.25 14.25C11.5637 14.25 14.25 11.5637 14.25 8.25C14.25 4.93629 11.5637 2.25 8.25 2.25C4.93629 2.25 2.25 4.93629 2.25 8.25C2.25 11.5637 4.93629 14.25 8.25 14.25Z"
+                          stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15.75 15.7498L12.4875 12.4873" stroke="black" stroke-width="1.5" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
             </button>
         </div>
     </div>

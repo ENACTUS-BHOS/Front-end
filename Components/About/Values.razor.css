@@ -27,3 +27,8 @@ p {
     display: flex;
     flex-direction: row;
 }
+
+img {
+    width: 40vw;
+    object-fit: contain;
+}

@@ -12,6 +12,10 @@
   margin-top: 5rem;
 }
 
+svg {
+  width: 1.125rem;
+}
+
 .search-menu button {
   background-color: #e4d4c8;
   color: var(--black-modified);
@@ -340,4 +344,8 @@ button {
 
 a {
   cursor: pointer;
+}
+
+.container {
+  max-width: 100% !important;
 }

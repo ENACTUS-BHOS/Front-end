@@ -4,6 +4,10 @@ a {
     margin-bottom: 1rem;
 }
 
+svg {
+    width: 1.125rem;
+}
+
 .footer {
     margin-top: 5rem;
     padding-bottom: 4rem;
