@@ -73,7 +73,7 @@ else
     <div class="content-container">
         @if (@CultureInfo.CurrentCulture.Name == "az-AZ")
         {
-            <Virtualize Context="artist" ItemsProvider="LoadArtists">
+            <Virtualize Context="artist" ItemsProvider="LoadArtists" OverscanCount="15">
                 <ItemContent>
                     <section class="artist-overview">
                         <div class="artist-details">
@@ -199,12 +199,10 @@ else
 
     private bool isLoading = true;
 
-    private string guid = string.Empty;
+    private int guid = 0;
 
     private async Task UpdateProductsData()
     {
-        isLoading = true;
-
         artists = new List<Artist>();
 
         var result = await GetArtistsAndCountAsync(skip, take, takeProducts, search, minimumPrice, maximumPrice, isSortAscending);
@@ -212,15 +210,17 @@ else
         artists = result.Artists;
 
         Count = result.Count;
-
-        isLoading = false;
     }
 
     protected override async Task OnInitializedAsync()
     {
-        guid = Guid.NewGuid().ToString();
+        Random random = new Random();
+
+        guid = random.Next(1, 50);
 
         await UpdateProductsData();
+
+        isLoading = false;
     }
 
     private async Task<ProductsCount> GetArtistsAndCountAsync(int skip, int take, int takeProducts, string? search, int? minimumPrice, int?
