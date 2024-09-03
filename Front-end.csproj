@@ -5,11 +5,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
-    <BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
-    <BlazorWebAssemblyPreserveCollationData>false</BlazorWebAssemblyPreserveCollationData>
-    <PublishTrimmed>true</PublishTrimmed>
-    <BlazorEnableCompression>true</BlazorEnableCompression>
-    <TrimMode>link</TrimMode>
   </PropertyGroup>
 
   <ItemGroup>
