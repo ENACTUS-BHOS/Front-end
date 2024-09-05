@@ -73,33 +73,34 @@ else
     <div class="content-container">
         @if (@CultureInfo.CurrentCulture.Name == "az-AZ")
         {
-            <Virtualize Context="artist" ItemsProvider="LoadArtists" OverscanCount="15">
+            <Virtualize Context="artist" ItemsProvider="LoadArtists" OverscanCount="1">
                 <ItemContent>
-                    <section class="artist-overview">
-                        <div class="artist-details">
-                            <div class="artist-name">@artist.Name</div>
-                            <div class="artist-role">@artist.Major</div>
-                        </div>
-                        <div class="artist-bio">
-                            @artist.Description
-                        </div>
-                        <div class="link">
-                            <a href="/Works/@artist.Id" class="view-art-link">
-                                Bütün işlərə bax
-                                <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9.40436 2.6543L15.75 8.99995L9.40436 15.3456" stroke="#201A1E" stroke-width="1.7"
-                                          stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M15.7499 9L2.25 9" stroke="#201A1E" stroke-width="1.7" stroke-linecap="round"
-                                          stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </section>
-                    <!-- ----------------------------------------------- -->
-                    <section class="art-gallery">
-                        <div class="art-cards">
-                            @foreach (var product in artist.Products)
-                            {
+                    <section>
+                        <section class="artist-overview">
+                            <div class="artist-details">
+                                <div class="artist-name">@artist.Name</div>
+                                <div class="artist-role">@artist.Major</div>
+                            </div>
+                            <div class="artist-bio">
+                                @artist.Description
+                            </div>
+                            <div class="link">
+                                <a href="/Works/@artist.Id" class="view-art-link">
+                                    Bütün işlərə bax
+                                    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.40436 2.6543L15.75 8.99995L9.40436 15.3456" stroke="#201A1E" stroke-width="1.7"
+                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15.7499 9L2.25 9" stroke="#201A1E" stroke-width="1.7" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </section>
+                        <!-- ----------------------------------------------- -->
+                        <section class="art-gallery">
+                            <div class="art-cards">
+                                @foreach (var product in artist.Products)
+                                {
                                 <div class="card">
                                     <img src="@product.ImageUrl" alt="art-image"/>
                                     <div class="card-description">
@@ -110,8 +111,9 @@ else
                                         </div>
                                     </div>
                                 </div>
-                            }
-                        </div>
+                                }
+                            </div>
+                        </section>
                     </section>
                 </ItemContent>
                 <Placeholder>
