@@ -1,15 +1,15 @@
 {
   "mainAssemblyName": "Front-end",
   "resources": {
-    "hash": "sha256-A/xldChGrX1IMtmk9WlCNU4SsvF8vmg0cttnaK2Q9O0=",
+    "hash": "sha256-9aXuBF/aV9axH7K98lA7JtMeZ8EXLM9UlRne1glKEjI=",
     "jsModuleNative": {
-      "dotnet.native.8.0.8.jyf2k20fe9.js": "sha256-R0yxDcHdZFPj9Hu1+1GFeuZwnRKmUSR4eC8qD0Jp0Y0="
+      "dotnet.native.8.0.8.sb58axu7wn.js": "sha256-juC5sA7gHTLXFEhAKgdM2/RavswpwCtDfjYGsAz2FXg="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.8.0.8.2uk76ccbzr.js": "sha256-0Dpj/NkVD5WqSC16ZvJLmlc38iv9+Je+umYBVOycPVU="
+      "dotnet.runtime.8.0.8.o1aejqlkw9.js": "sha256-0Dpj/NkVD5WqSC16ZvJLmlc38iv9+Je+umYBVOycPVU="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-EQb2Bqxx2UOvpMUCMcaXkKh8ihiooLz7hdjDw3rFKEg="
+      "dotnet.native.wasm": "sha256-OcUTcd7qQceenWEF93409WZcaXp2qQbEyhdchog4RUE="
     },
     "icu": {
       "icudt.dat": "sha256-tO5O5YzMTVSaKBboxAqezOQL9ewmupzV2JrB5Rkc8a4="
@@ -18,7 +18,7 @@
       "BlazorBootstrap.wasm": "sha256-DXl738A3nveFxYK+NWkxvHdTmicdO6btBT/VduMi0Co=",
       "Blazored.LocalStorage.wasm": "sha256-OaMAAd5n7ORfyur5e3QIyEVKJ76MKIvwbg7/icnnYcU=",
       "Blazored.Modal.wasm": "sha256-pd5kOK6QriVso0EYUPBtgDCtLAcUIn/G+FNgL2ON4kQ=",
-      "Front-end.wasm": "sha256-FKBxVgI4WgYn/i+5sUuxfcL1F0LNUdUUxMMz+Py6uuY=",
+      "Front-end.wasm": "sha256-uKQpZhrkJGxH1T6YFPIJqLNPmNtXhUBpe/23VIqHIU0=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-L3z9gLy453ChDsq4RXjjKDg5IncprVXlOCxwTUv0LPc=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-vtNt4WhOvb9C3oil3thBJAPq+dZ7ljAlN0vedv8iZWc=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-3Okq8uvjRcqJxUUQPBJVsHx1IEWouzXzLMwxCGa09PU=",
